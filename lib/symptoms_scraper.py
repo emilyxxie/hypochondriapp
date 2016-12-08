@@ -10,12 +10,11 @@ symptoms = symptom()
 for match in matches:
   if "(" in match:
     in_parens = match[match.find("(") + 1: match.find(")")].lower().strip()
-    if in_parens not in symptoms_array:
-      symptoms_array.add(in_parens.lower())
-      group_count += 1
+    if in_parens not in symptoms:
+      symptoms.add(in_parens.lower())
     match = match[:match.find("(")]
-  symptoms_array.add(match.lower().strip())
-  group_count += 1
+  symptoms.add(match.lower().strip())
+
 
 symptoms_json = {'symptoms' : []}
 
