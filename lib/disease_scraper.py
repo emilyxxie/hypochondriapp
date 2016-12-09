@@ -2,49 +2,75 @@ import wikipedia
 import json
 import sys
 import re
+import string
+import urllib2
+from bs4 import BeautifulSoup
+import pdb
 
-disease = wikipedia.page('Cerebral_salt-wasting_syndrome')
-
-regex = r"<a.*?>(.*?)<\/a>"
-data = open('symptoms_original.txt', 'r').read()
-matches = re.findall(regex, data)
-
-symptoms_regex = ""
-group_count = 0
-
-symptoms_array = set()
-complete_symptom_list = set()
-
-for match in matches:
-  if "(" in match:
-    in_parens = match[match.find("(") + 1: match.find(")")].lower().strip()
-    if in_parens not in symptoms_array:
-      symptoms_array.add(in_parens.lower())
-      group_count += 1
-    match = match[:match.find("(")]
-  symptoms_array.add(match.lower().strip())
-  group_count += 1
+# rare_diseases = "https://en.wikipedia.org/w/index.php?title=Category:Rare_diseases"
 
 
-  if group_count == 100:
-    # we must batch the regex match since there is a 100 group count limit
-    symptoms_array = list(symptoms_array)
-    symptoms_regex = "|".join(symptoms_array)
-    sd_matches = re.findall(r'%s' % symptoms_regex, disease.content)
+page_name = "https://en.wikipedia.org/w/index.php?title=Category:Rare_diseases&from="
+# page_name = ""
+links = set()
 
-    for sd_match in sd_matches:
-      sd_match = sd_match.encode(sys.getdefaultencoding())
-      complete_symptom_list.add(sd_match)
+for c in string.ascii_lowercase:
+  opener = urllib2.build_opener()
+  opener.addheaders = [('User-agent', 'Mozilla/5.0')] #wikipedia needs this
 
-    symptoms_array = set()
-    symptoms_regex = ""
-    group_count = 0
+  resource = opener.open(page_name + c)
+
+  print(page_name + c)
+
+  data = resource.read()
+  resource.close()
+  soup = BeautifulSoup(data, "html.parser")
+
+  links |= set(map(lambda t: t.get("href")[6:].encode(sys.getdefaultencoding()),
+               soup.find(id="mw-pages").find(class_="mw-category").find_all("a")))
 
 
-print(complete_symptom_list)
+replacers = [('%E2%80%93', '_'), ('%C3%A9', 'e'), ('%C3%B6', 'o')]
+print(len(links))
+for link in links:
+  print 'fetching', link
+  try:
+    for r, s in replacers:
+      link = link.replace(r, s)
+    page = wikipedia.page(link)
+  except wikipedia.exceptions.PageError:
+    print 'bad link:', link
+
+  # print(page.content)
+
+# regex = r"<a.*?>(.*?)<\/a>"
+# symptoms = json.loads(open('../symptoms.js', 'r').read())
+# symptoms_regex = ""
+# group_count = 0
+
+# symptoms_array = set()
+# complete_symptom_list = set()
+
+# for symptom in symptoms['symptoms']:
+#   group_count += 1
+#   symptoms_array.add(
+#     symptom.encode(sys.getdefaultencoding())
+#   )
+
+#   if group_count == 100:
+#     # we must batch the regex match since there is a 100 group count limit
+#     symptoms_array = list(symptoms_array)
+#     symptoms_regex = "|".join(symptoms_array)
+#     sd_matches = re.findall(r'%s' % symptoms_regex, disease.content, re.IGNORECASE)
+
+#     for sd_match in sd_matches:
+#       sd_match = sd_match.encode(sys.getdefaultencoding()).lower()
+#       complete_symptom_list.add(sd_match)
+
+#     symptoms_array = set()
+#     symptoms_regex = ""
+#     group_count = 0
 
 
 
-# symptoms_regex = "(leaking urine)|(hair loss)|(dizziness)|(weakness)|(vertigo)"
-
-# for
+# print(complete_symptom_list)

@@ -1,0 +1,10 @@
+remove from symptoms:
+  - Crying baby
+  - female
+  - frequency
+
+
+
+remove from diseases:
+  - ALS?
+  - cystic fibrosis

@@ -3,9 +3,7 @@ regex = r"<a.*?>(.*?)<\/a>"
 data = open('symptoms_original.txt', 'r').read()
 matches = re.findall(regex, data)
 
-symptoms = symptom()
-# for match in matches:
-#   symptoms_json['symptoms'].append(match)
+symptoms = set()
 
 for match in matches:
   if "(" in match:
@@ -15,8 +13,9 @@ for match in matches:
     match = match[:match.find("(")]
   symptoms.add(match.lower().strip())
 
-
-symptoms_json = {'symptoms' : []}
+data2 = open('additional_symptoms.txt', 'r').read().splitlines()
+symptoms = symptoms.union(set(data2))
+symptoms_json = {'symptoms' : list(symptoms)}
 
 import io, json
 with io.open('../symptoms.js', 'w', encoding='utf-8') as f:

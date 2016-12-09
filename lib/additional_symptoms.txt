@@ -1,0 +1,223 @@
+cachexia
+loss of appetite
+weight loss
+weight gain
+dry mouth
+fatigue
+malaise
+asthenia
+muscle weakness
+pyrexia
+jaundice
+pain
+abdominal pain
+chest pain
+bruising
+epistaxis
+tremor
+convulsions
+muscle cramps
+tinnitus
+dizziness
+vertigo
+syncope
+hypothermia
+hyperthermia
+discharge
+bleeding
+swelling
+deformity
+sweats
+chills
+shivering
+acalculia
+acrophobia
+agnosia
+agoraphobia
+akathisia
+akinesia
+alexia
+amusia
+anhedonia
+anomia
+anosognosia
+anxiety
+apraxia
+arachnophobia
+ataxia
+bradykinesia
+cataplexy
+chorea
+claustrophobia
+confusion
+depression
+dysarthria
+dysgraphia
+dystonia
+euphoria
+hallucination
+headache
+homicidal ideation
+insomnia
+mania
+paralysis
+paranoia
+paresthesia
+phobia
+somnolence
+tic
+tremor
+blurred vision
+double vision
+exophthalmos
+nystagmus
+anorexia
+bloating
+belching
+blood in stool
+constipation
+diarrhea
+dysphagia
+dyspepsia
+flatulence
+fecal incontinence
+haematemesis
+nausea
+odynophagia
+pyrosis
+rectal malodor
+vomiting
+cardiovascular pain
+chest pain
+claudication
+palpitation
+tachycardia
+bradycardia
+arrhythmia
+dysuria
+hematuria
+impotence
+polyuria
+retrograde ejaculation
+urinary frequency
+urinary incontinence
+urinary retention
+hypoventilation
+hyperventilation
+sleep apnea
+apnea
+cough
+dyspnea
+hemoptysis
+chest pain
+sputum production
+tachypnea
+abrasion
+alopecia
+anasarca
+blister
+edema
+hirsutism
+itching
+laceration
+paresthesia
+rash
+urticaria
+dyspareunia
+painful intercourse
+pelvic pain
+infertility
+pain
+vaginal bleeding
+post-prandial abdominal pain
+trouble breathing
+dehydration
+pallor
+facial flushing
+low blood pressure
+excessive thirst
+constipation
+acid reflux
+visual disturbance
+headache
+nerve pain
+muscle cramp
+fainting
+scoliosis
+pain
+stabbing pain
+chronic pain
+loss of vision
+muscle weakness
+myopathy
+waddling gait
+difficulty gaining weight
+aching
+pressure sensation
+facial pain
+tooth pain
+poor appetite
+vomiting
+poor growth
+irritability
+frequent fevers
+frequent infection
+jaundice
+yellowing of the skin
+itchiness
+poor absorption of nutrients
+pale stools
+dark urine
+swollen abdomen
+bone fragility
+seizure
+irregular heartbeat
+breathing problems
+thin hair
+brittle nails
+muscle pain
+mottled skin
+myalgia
+unstable joints
+bleeding
+gastrointestinal discomfort
+malabsorption of food
+decreased motility
+hearing loss
+gastrointestinal issues
+twitching
+twitch
+drooling
+lethargy
+malaise
+sleep disturbances
+skeletal malformations
+skeletal malformation
+hyperactivity
+aggression
+loss of inhibition
+inflammation
+oral lesions
+painful lesions
+eye pain
+blurred vision
+red eye
+stiff neck
+difficulty speaking
+memory loss
+loss of memory
+visual disturbances
+blindness
+deafness
+fever
+winterbottom's sign
+chancre
+aggressive behavior
+loss of mobility
+enlarged spleen
+impaired vision
+bone deformity
+bone erosion
+intracranial pressure
+breathlessness
+loss of speech
