@@ -71,7 +71,6 @@ blurred vision
 double vision
 exophthalmos
 nystagmus
-anorexia
 bloating
 belching
 blood in stool
@@ -221,3 +220,16 @@ bone erosion
 intracranial pressure
 breathlessness
 loss of speech
+hypotension
+leg ache
+leg pain
+back pain
+back ache
+shoulder pain
+arm pain
+scaly skin
+dry skin
+neck stiffness
+congestion
+dizzy
+
