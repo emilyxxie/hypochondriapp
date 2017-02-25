@@ -52,3 +52,14 @@ input {
   width: 100%;
   padding-bottom: 20%;
 }
+
+
+.diagnosis_info {
+
+}
+
+.diagnosis_info_header {
+  text-align: left;
+  font-weight: 600;
+  color: white;
+}

@@ -1,10 +1,14 @@
 $( document ).ready( function() {
 
-  var interstitialWait = 1500;
-  // var interstitialWait = 1;
+  // var interstitialWait = 1500;
+  var interstitialWait = 1;
   var interstitialMedium = 900;
   var interstitialLong = 4000;
-  var interstitialFast = 550;
+  // var interstitialFast = 550;
+
+  var interstitialMedium = 1;
+  var interstitialLong = 1;
+  var interstitialFast = 1;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -63,13 +67,17 @@ $( document ).ready( function() {
     $('.tag_line').text(disease.toUpperCase());
     await sleep(interstitialLong);
     $('.tag_line').fadeOut();
+    await sleep(interstitialFast);
     $('.symptoms_form').remove();
-    showDiagnosisInfo();
+    // showDiagnosisInfo(disease);
   }
 
-  function showDiagnosisInfo() {
-
-  }
+  // function showDiagnosisInfo(disease) {
+  //   $('.col-md-10').append(
+  //     '<div class="diagnosis_info"><h1 class="diagnosis_info_header">Diagnosis:&nbsp;</h1>'
+  //     + '<p class>' + disease +
+  //       '</h1></div>');
+  // }
 
 
   $('.symptoms_button').click(function() {
