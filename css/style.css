@@ -6,9 +6,9 @@ body {
 }
 
 .symptoms_form {
-   padding-top: 25%;
-  /*width: 100%;*/
-
+  padding-top: 25%;
+  width: 100%;
+  padding-bottom: 20%;
 }
 
 input {
@@ -45,4 +45,10 @@ input {
   margin-bottom: 40px;
   /*-webkit-text-stroke: 0.5px black;*/
   font-weight: 700;
+}
+
+.interstitial_activated {
+  padding-top: 25%;
+  width: 100%;
+  padding-bottom: 20%;
 }
