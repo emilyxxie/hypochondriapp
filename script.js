@@ -1,9 +1,9 @@
 $( document ).ready( function() {
 
-  // var interstitialWait = 1500;
-  var interstitialWait = 1;
+  var interstitialWait = 1500;
+  // var interstitialWait = 1;
   var interstitialMedium = 900;
-  var interstitialLong = 3000;
+  var interstitialLong = 4000;
   var interstitialFast = 550;
 
   function sleep(ms) {
@@ -64,6 +64,10 @@ $( document ).ready( function() {
     await sleep(interstitialLong);
     $('.tag_line').fadeOut();
     $('.symptoms_form').remove();
+    showDiagnosisInfo();
+  }
+
+  function showDiagnosisInfo() {
 
   }
 
@@ -114,7 +118,7 @@ $( document ).ready( function() {
       // for (var disease in diseases_hash) {
       //   if (disease)
       // }
-      diagnose("Capillary Leak Syndrome with Arial Deficiency Type I");
+      diagnose("Mitochondrial neurogastrointestinal encephalopathy syndrome");
     }
 
 
