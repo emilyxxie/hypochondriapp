@@ -1,0 +1,48 @@
+body {
+  background-image: url('../assets/hospital_bed.jpg');
+  background-size: cover;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.symptoms_form {
+   padding-top: 25%;
+  /*width: 100%;*/
+
+}
+
+input {
+  width: 82%;
+}
+
+.symptoms_button {
+  border: 5px solid #fff04b;
+  height: 60px;
+  font-weight: 600;
+  font-size: 120%;
+  vertical-align: middle;
+  background-color: #fff04b;
+}
+
+.symptoms_button:hover {
+  background-color: #00234b;
+  color: white;
+  border: 5px solid #00234b;
+}
+
+.symptoms_input_box {
+  padding: 20px;
+  height: 60px;
+  border: 5px solid white;
+  font-size: 18px;
+  /*width: 80%;*/
+}
+
+.tag_line {
+  font-size: 450%;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin-bottom: 40px;
+  /*-webkit-text-stroke: 0.5px black;*/
+  font-weight: 700;
+}

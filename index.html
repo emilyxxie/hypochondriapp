@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet"> -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 
   <!-- JQuery. Needed for bootstrap (e.g. navbar dropdown) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -11,13 +15,22 @@
   <script src="script.js"></script>
 
 </head>
-<body>
+
+<body> <!-- background="hospital_bed.jpg"> -->
 <div style="overflow-x:hidden">
 
-  <form class="symptoms_form">
-    Enter Your Symptoms:<br>
-    <input type="text" name="submitted_symptoms"><br>
-    <input type="submit" value="Submit" class="submit_symptoms">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="symptoms_form">
+        <h1 class="tag_line">Feeling sick? Enter your symptoms.</h1>
+        <input type="text" class="symptoms_input_box" placeholder="example: fever, headache, post-prandial abdominal pain">
+        <button type="button" class="symptoms_button">&nbsp;<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+&nbsp; Diagnose me! &nbsp;</button>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
   </form>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 </body>
