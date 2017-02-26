@@ -73,10 +73,27 @@ $( document ).ready( function() {
   }
 
   function showDiagnosisInfo(disease) {
-    $('.col-md-10').append(
-      '<div class="col-md-3"><h1 class="diagnosis_info_header">Diagnosis:&nbsp;</h1></div>'
-      + '<div class="col-md-7"><p class="diagnosis_info">' + disease +
-        '</p></div>');
+    $('.col-md-10').append('<div class="col-md-1"></div><div class="col-md-10"><div class="col-md-3 diagnosis_header"><p class="name">'
+      + disease +
+      'DISEASE NAME</p></div><div class="col-md-7 diagnosis_info"><p class="info">DISEASE INFO</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
+      + "HELLOW"
+      + 'DESCRIPTION</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
+      + "ENTER SUMMARY HERE"
+      + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">SYMPTOMS'
+      + '</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
+      + 'List of symptoms'
+      + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
+      +
+          YOUR MATCHING SYMPTOMS
+        </p>
+      </div>
+      <div class="col-md-7 diagnosis_info">
+        <p class="info">Fever, Headache, Nausea</p>
+      </div>
+
+      <div class="col-md-10 diagnosis_info">
+        <p class="disclaimer">*DISCLAIMER: This is a joke app. You likely don\'t have this rare disease. If you are truly concerned, please see a doctor.</p>
+      </div>'
   }
 
 

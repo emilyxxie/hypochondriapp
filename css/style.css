@@ -6,13 +6,13 @@ body {
 }
 
 .symptoms_form {
-  padding-top: 25%;
+  padding-top: 20%;
   width: 100%;
   padding-bottom: 20%;
 }
 
 input {
-  width: 82%;
+  width: 70%;
 }
 
 .symptoms_button {
@@ -53,12 +53,6 @@ input {
   padding-bottom: 20%;
 }
 
-
-
-
- {
-
-}
 
 .diagnosis_info  {
   text-align: left;
