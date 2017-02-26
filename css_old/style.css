@@ -1,0 +1,81 @@
+/*body {
+  background-image: url('../assets/hospital_bed.jpg');
+  background-size: cover;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.symptoms_form {
+  padding-top: 20%;
+  width: 100%;
+  padding-bottom: 20%;
+}
+
+input {
+  width: 70%;
+}
+
+.symptoms_button {
+  border: 5px solid #fff04b;
+  height: 60px;
+  font-weight: 600;
+  font-size: 120%;
+  vertical-align: middle;
+  background-color: #fff04b;
+}
+
+.symptoms_button:hover {
+  background-color: #00234b;
+  color: white;
+  border: 5px solid #00234b;
+}
+
+.symptoms_input_box {
+  padding: 20px;
+  height: 60px;
+  border: 5px solid white;
+  font-size: 18px;
+  /*width: 80%;*/
+}
+
+.tag_line {
+  font-size: 450%;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin-bottom: 40px;
+  /*-webkit-text-stroke: 0.5px black;*/
+  font-weight: 700;
+}
+
+.interstitial_activated {
+  padding-top: 25%;
+  width: 100%;
+  padding-bottom: 20%;
+}
+
+
+.diagnosis_info  {
+  text-align: left;
+  font-weight: 400;
+  color: white;
+  font-size: 180%;
+  padding-top: 40px;
+  word-wrap: break-word;
+
+}
+
+.diagnosis_header {
+  text-align: left;
+  font-weight: 600;
+  color: #fff04b;
+  font-size: 180%;
+  padding-top: 40px;
+}
+
+.disclaimer {
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  font-size: 100%;
+  padding-top: 40px;
+}*/

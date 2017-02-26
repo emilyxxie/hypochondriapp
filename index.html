@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
 
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/flexboxgrid.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet"> -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 
   <!-- JQuery. Needed for bootstrap (e.g. navbar dropdown) -->
@@ -13,23 +17,34 @@
 
   <script src="diseases.js"></script>
   <script src="script.js"></script>
+  <script src="js/textext.core.js"></script>
 
 </head>
 
-<body>
-<div style="overflow-x:hidden">
+<body class="everything">
+  <div class="header">
+    <div class="logo">hypochondriapp</div>
+    <div class="navigation">About</div>
+  </div>
+  <div class="main_body">
+    <main class="main_content">
 
-      <div class="symptoms_form">
         <h1 class="tag_line">Feeling sick? Enter your symptoms.</h1>
-        <input type="text" class="symptoms_input_box" placeholder="example: fever, headache, retrograde ejaculation">
-        <button type="button" class="symptoms_button">&nbsp;<i class="fa fa-search fa-2x" aria-hidden="true"></i>
-&nbsp; Diagnose me! &nbsp;</button>
-      </form>
-      </div>
-    </div>
-    <div class="col-md-1"></div>
+        <div class="symptoms_input">
+          <input type="text" class="symptoms_input_box" placeholder="example: fever, headache, retrograde ejaculation">
+          <button type="button" class="symptoms_button">&nbsp;<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+                      &nbsp; Diagnose me!&nbsp;</button>
+        </div>
 
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
+
+    </main>
+    <div class="col_1"></div>
+    <div class="col_2"></div>
+
+
+
+  </div>
+  <footer></footer>
 </body>

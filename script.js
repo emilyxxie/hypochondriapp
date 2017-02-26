@@ -154,6 +154,13 @@ $( document ).ready( function() {
 
   });
 
+  $('.symptoms_input_box').click(function() {
+    console.log("HELLO!!!!");
+    $(this).textext({
+      enabled: true
+    });
+  });
+
 
 
 });

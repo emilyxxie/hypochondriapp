@@ -1,10 +1,62 @@
-/*.container {
-  display: flex;
+/* MAIN CONTENT */
+
+.tag_line {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-weight: 700px;
+  font-size: 67%;
+  flex: 1;
+  white-space: nowrap;
+  margin: 15px;
 }
 
-.symptoms_form {
-  margin: auto;
-}*/
+.symptoms_input {
+  display: flex;
+  padding-bottom: 10%;
+  height: 60px;
+}
+
+
+.symptoms_input_box {
+  flex: 7;
+  font-size: 18px;
+  padding: 1%;
+  border: 5px solid white;
+}
+
+.symptoms_button {
+  flex: 1;
+  border: 5px solid #fff04b;
+  font-weight: 600;
+  font-size: 0.9vw;
+  background-color: #fff04b;
+  color: #00234b;
+  justify-content: center;
+}
+
+
+.symptoms_button:hover {
+  background-color: #00234b;
+  color: white;
+  border: 5px solid #00234b;
+}
+
+
+
+
+
+
+
+
+
+/* STRUCTURE BELOW */
+
+body {
+  /* 15, 81, 95 */
+  background-image: linear-gradient( rgba(5, 81, 105, 0.3), rgba(5, 81, 105, 0.3) ), url('../assets/hospital_bed.jpg');
+  /*background-image: url('../assets/hospital_bed.jpg');*/
+  background-size: cover;
+}
 
 .header {
   display: flex;
@@ -12,51 +64,60 @@
 }
 
 .logo {
-  flex: 6;
+  flex: 18;
+  font-weight: 700;
+  font-family: 'Yanone Kaffeesatz';
+  font-size: 50px;
+  /*color: #00234b;*/
+  /*color: #fff04b;*/
+  color: #f7e200;
+  /*color: white;*/
+  /*-webkit-text-stroke-width: 1px;*/
+  /*-webkit-text-stroke-color: black;*/
+  text-shadow: 2px 2px #00234b;
 }
 
-.nav {
+.navigation {
   flex: 1;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
 }
 
-.HolyGrail,
-.HolyGrail-body {
+.everything,
+.main_body {
   display: flex;
   flex-direction: column;
 }
 
-.HolyGrail-nav {
+.col_1 {
   order: -1;
 }
 
-.HolyGrail-content {
+.main_content {
   font-size: 7vw;
   margin: auto;
-}
-
-header {
-  font-size: 30px;
-  padding: 20px;
   display: flex;
-  flex: 2;
-}
-
-ul {
-  flex: 2;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
-@media (min-width: 320px) {
-  .HolyGrail-body {
-    flex-direction: row;
-    flex: 1;
-  }
-  .HolyGrail-content {
-    flex: 1;
-    margin: auto;
-  }
-  .HolyGrail-nav, .HolyGrail-ads {
+.main_body {
+  flex-direction: row;
+  flex: 1;
+}
+
+.main_content {
+  flex: 1;
+  margin: auto;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+
+@media (max-width: 320px) {
+  .col_1, .col_2 {
     /* 12em is the width of the columns */
-    flex: 0 0 10em; /* adjust this for mobile and stuff */
+    flex: 0 0 2em; /* adjust this for mobile and stuff */
   }
 }
