@@ -69,15 +69,15 @@ $( document ).ready( function() {
     $('.tag_line').fadeOut();
     await sleep(interstitialFast);
     $('.symptoms_form').remove();
-    // showDiagnosisInfo(disease);
+    showDiagnosisInfo(disease);
   }
 
-  // function showDiagnosisInfo(disease) {
-  //   $('.col-md-10').append(
-  //     '<div class="diagnosis_info"><h1 class="diagnosis_info_header">Diagnosis:&nbsp;</h1>'
-  //     + '<p class>' + disease +
-  //       '</h1></div>');
-  // }
+  function showDiagnosisInfo(disease) {
+    $('.col-md-10').append(
+      '<div class="col-md-3"><h1 class="diagnosis_info_header">Diagnosis:&nbsp;</h1></div>'
+      + '<div class="col-md-7"><p class="diagnosis_info">' + disease +
+        '</p></div>');
+  }
 
 
   $('.symptoms_button').click(function() {

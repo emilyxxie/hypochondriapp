@@ -54,12 +54,34 @@ input {
 }
 
 
-.diagnosis_info {
+
+
+ {
 
 }
 
-.diagnosis_info_header {
+.diagnosis_info  {
+  text-align: left;
+  font-weight: 400;
+  color: white;
+  font-size: 180%;
+  padding-top: 40px;
+  word-wrap: break-word;
+
+}
+
+.diagnosis_header {
   text-align: left;
   font-weight: 600;
   color: white;
+  font-size: 180%;
+  padding-top: 40px;
+}
+
+.disclaimer {
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  font-size: 100%;
+  padding-top: 40px;
 }
