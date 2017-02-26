@@ -1,14 +1,14 @@
 $( document ).ready( function() {
 
-  // var interstitialWait = 1500;
+  // var interstitialInitial = 1500;
   var interstitialWait = 1;
   var interstitialMedium = 900;
   var interstitialLong = 4000;
-  // var interstitialFast = 550;
+  var interstitialFast = 550;
 
-  var interstitialMedium = 1;
-  var interstitialLong = 1;
-  var interstitialFast = 1;
+  // var interstitialMedium = 1;
+  // var interstitialLong = 1;
+  // var interstitialFast = 1;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -61,40 +61,42 @@ $( document ).ready( function() {
     await sleep(interstitialFast);
     $('.tag_line').text("HAVE");
     await sleep(interstitialFast);
-    $('.tag_line').css("font-size", "450%");
+    // $('.tag_line').css("font-size", "450%");
+
+    $('.tag_line').css("font-size", "900%");
     $('.tag_line').css("font-weight", "800");
     $('.tag_line').css("color", "rgb(187, 21, 21)");
     $('.tag_line').text(disease.toUpperCase());
     await sleep(interstitialLong);
     $('.tag_line').fadeOut();
     await sleep(interstitialFast);
-    $('.symptoms_form').remove();
-    showDiagnosisInfo(disease);
+    // $('.symptoms_form').remove();
+    // showDiagnosisInfo(disease);
   }
 
-  function showDiagnosisInfo(disease) {
-    $('.col-md-10').append('<div class="col-md-1"></div><div class="col-md-10"><div class="col-md-3 diagnosis_header"><p class="name">'
-      + disease +
-      'DISEASE NAME</p></div><div class="col-md-7 diagnosis_info"><p class="info">DISEASE INFO</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
-      + "HELLOW"
-      + 'DESCRIPTION</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
-      + "ENTER SUMMARY HERE"
-      + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">SYMPTOMS'
-      + '</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
-      + 'List of symptoms'
-      + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
-      +
-          YOUR MATCHING SYMPTOMS
-        </p>
-      </div>
-      <div class="col-md-7 diagnosis_info">
-        <p class="info">Fever, Headache, Nausea</p>
-      </div>
+  // function showDiagnosisInfo(disease) {
+  //   $('.col-md-10').append('<div class="col-md-1"></div><div class="col-md-10"><div class="col-md-3 diagnosis_header"><p class="name">'
+  //     + disease +
+  //     'DISEASE NAME</p></div><div class="col-md-7 diagnosis_info"><p class="info">DISEASE INFO</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
+  //     + "HELLOW"
+  //     + 'DESCRIPTION</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
+  //     + "ENTER SUMMARY HERE"
+  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">SYMPTOMS'
+  //     + '</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
+  //     + 'List of symptoms'
+  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
+  //     +
+  //         YOUR MATCHING SYMPTOMS
+  //       </p>
+  //     </div>
+  //     <div class="col-md-7 diagnosis_info">
+  //       <p class="info">Fever, Headache, Nausea</p>
+  //     </div>
 
-      <div class="col-md-10 diagnosis_info">
-        <p class="disclaimer">*DISCLAIMER: This is a joke app. You likely don\'t have this rare disease. If you are truly concerned, please see a doctor.</p>
-      </div>'
-  }
+  //     <div class="col-md-10 diagnosis_info">
+  //       <p class="disclaimer">*DISCLAIMER: This is a joke app. You likely don\'t have this rare disease. If you are truly concerned, please see a doctor.</p>
+  //     </div>'
+  // }
 
 
   $('.symptoms_button').click(function() {
