@@ -1,81 +1,62 @@
-body {
-  background-image: url('../assets/hospital_bed.jpg');
-  background-size: cover;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+/*.container {
+  display: flex;
 }
 
 .symptoms_form {
-  padding-top: 20%;
-  width: 100%;
-  padding-bottom: 20%;
+  margin: auto;
+}*/
+
+.header {
+  display: flex;
+  padding: 20px 20px 0 20px;
 }
 
-input {
-  width: 70%;
+.logo {
+  flex: 6;
 }
 
-.symptoms_button {
-  border: 5px solid #fff04b;
-  height: 60px;
-  font-weight: 600;
-  font-size: 120%;
-  vertical-align: middle;
-  background-color: #fff04b;
+.nav {
+  flex: 1;
 }
 
-.symptoms_button:hover {
-  background-color: #00234b;
-  color: white;
-  border: 5px solid #00234b;
+.HolyGrail,
+.HolyGrail-body {
+  display: flex;
+  flex-direction: column;
 }
 
-.symptoms_input_box {
+.HolyGrail-nav {
+  order: -1;
+}
+
+.HolyGrail-content {
+  font-size: 7vw;
+  margin: auto;
+}
+
+header {
+  font-size: 30px;
   padding: 20px;
-  height: 60px;
-  border: 5px solid white;
-  font-size: 18px;
-  /*width: 80%;*/
+  display: flex;
+  flex: 2;
 }
 
-.tag_line {
-  font-size: 450%;
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  margin-bottom: 40px;
-  /*-webkit-text-stroke: 0.5px black;*/
-  font-weight: 700;
-}
-
-.interstitial_activated {
-  padding-top: 25%;
-  width: 100%;
-  padding-bottom: 20%;
+ul {
+  flex: 2;
 }
 
 
-.diagnosis_info  {
-  text-align: left;
-  font-weight: 400;
-  color: white;
-  font-size: 180%;
-  padding-top: 40px;
-  word-wrap: break-word;
-
-}
-
-.diagnosis_header {
-  text-align: left;
-  font-weight: 600;
-  color: #fff04b;
-  font-size: 180%;
-  padding-top: 40px;
-}
-
-.disclaimer {
-  text-align: left;
-  font-weight: 600;
-  color: white;
-  font-size: 100%;
-  padding-top: 40px;
+@media (min-width: 320px) {
+  .HolyGrail-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .HolyGrail-content {
+    flex: 1;
+    margin: auto;
+  }
+  .HolyGrail-nav, .HolyGrail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 10em; /* adjust this for mobile and stuff */
+  }
 }
