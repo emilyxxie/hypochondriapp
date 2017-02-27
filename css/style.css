@@ -1,3 +1,27 @@
+.info-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.col1 {
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  .info-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .info-content {
+    flex: 1;
+  }
+  .col1, .col2 {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+}
+
+
 /* MAIN CONTENT */
 
 .tag_line {
