@@ -127,20 +127,9 @@ $( document ).ready( function() {
     if (Object.keys(diseases_hash).length == 0) {
       noDiseases();
     } else {
-      // var symptoms_matched = 0;
-      // var consideration_pool = [];
-      // for (disease in diseases_hash) {
-      //   if diseases_hash[disease] > symptoms_matched
-      // }
-      // // var diagnosis;
-      // // for (var disease in diseases_hash) {
-      // //   if (disease)
-      // // }
-      // debugger;
-      // diagnose(disease);
 
       // TODO: make algorithm weigh total number of symptoms too.
-      console.log(diseases_hash);
+
       var diseases_by_symptoms = Object.keys(diseases_hash).sort(function(a,b){
         return diseases_hash[b]['count'] - diseases_hash[a]['count'];
       });
@@ -155,24 +144,15 @@ $( document ).ready( function() {
 
       diagnose(final_disease, diseases_hash[final_disease]);
 
-
-
-      // if none of the diseases are longer than a given number, then pick the most symptoms matched
-
-
-      // diagnose("Mitochondrial neurogastrointestinal encephalopathy syndrome");
-      // diagnose("Naegeli–Franceschetti–Jadassohn syndrome");
     }
 
   });
-
 
   $('.flexdatalist').flexdatalist({
        selectionRequired: 1,
        minLength: 1,
        data: ['data', 'dime']
   });
-
 
 
 });
