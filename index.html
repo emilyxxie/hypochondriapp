@@ -26,10 +26,10 @@
 
 <body class="everything">
   <div class="header">
-    <div class="logo">hypochondriapp</div>
-    <div class="navigation">About</div>
+    <div class="logo"><a href="index.html">hypochondriapp</a></div>
+    <div class="navigation"><a href="about.html">About</a></div>
   </div>
-<!--   <div class="main_body">
+  <div class="main_body">
     <main class="main_content">
         <h1 class="tag_line">Feeling sick? Enter your symptoms.</h1>
         <div class="symptoms_input">
@@ -45,12 +45,37 @@
         </div>
         <div class="interstitial"><h1></h1></div>
     </main>
-  </div> -->
+  </div>
 
   <div class="info-body">
-    <main class="info-content">Content</main>
-    <nav class="col1"></nav>
-    <aside class="col2"></aside>
+    <main class="info-content">
+      <div class="flex-grid disease_info">
+        <div class="info_header">Disease</div>
+        <div class="info_detail disease_name"></div>
+
+        <div class="info_header">Description</div>
+        <div class="info_detail disease_description"></div>
+
+        <div class="info_header">Symptoms</div>
+        <div class="info_detail disease_symptoms"></div>
+
+        <div class="info_header">Your Matching Symptoms</div>
+        <div class="info_detail disease_matching_symptoms"></div>
+
+        <button type="button" class="symptoms_button read_more">&nbsp;</i>
+                      &nbsp; Read More >>&nbsp;</button>
+
+        <button type="button" class="symptoms_button try_again" onclick="window.location.reload()">&nbsp;</i>
+      &nbsp; Misdiagnosed? Try again >>&nbsp;</button>
+        <div class="disclaimer">* DISCLAIMER: THIS IS A SPOOF APP. YOU ARE VERY, VERY UNLIKELY TO HAVE THIS RARE DISEASE. IF YOU ARE CONCERNED, PLEASE SEE YOUR DOCTOR.
+        </div>
+
+
+      </div>
+
+    </main>
+    <div class="col1"></div>
+    <div class="col2"></div>
   </div>
 
 

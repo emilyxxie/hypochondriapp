@@ -1,4 +1,4 @@
-.info-body {
+.info-body, .about {
   display: flex;
   flex-direction: column;
 }
@@ -7,18 +7,63 @@
   order: -1;
 }
 
-@media (min-width: 768px) {
-  .info-body {
-    flex-direction: row;
-    flex: 1;
-  }
-  .info-content {
-    flex: 1;
-  }
+a {
+  color: #f7e200;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.info-body, .about {
+  flex-direction: row;
+  flex: 1;
+}
+.info-content {
+  flex: 1;
+}
+.col1, .col2 {
+  /* 12em is the width of the columns */
+  flex: 0 0 12em;
+}
+
+@media (max-width: 768px) {
   .col1, .col2 {
     /* 12em is the width of the columns */
-    flex: 0 0 12em;
+    flex: 0 0 2em;
   }
+}
+
+p {
+  font-size: 1.4em;
+  font-weight: 100;
+}
+
+.broken_note {
+  font-weight: 100;
+  /*font-size: 1em;*/
+}
+
+.disease_info {
+  color: white;
+  padding-top: 3em;
+}
+
+.info_header {
+  font-size: 2em;
+  padding-bottom: 0.1em;
+  font-weight: bold;
+}
+
+.info_detail {
+  padding-bottom: 2em;
+}
+
+.disclaimer {
+  padding-top: 3em;
+  font-weight: bold;
 }
 
 

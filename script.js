@@ -1,22 +1,6 @@
 $( document ).ready( function() {
 
-  // var availableSymptoms = {};
-
-  // symptoms['symptoms'].forEach(function(symptom) {
-  //   for (var disease in diseases) {
-  //     diseases[disease]['symptoms'].forEach(function(disease_symptom){
-  //       if (symptom == disease_symptom) {
-  //         if (!(symptom in availableSymptoms)) {
-  //           availableSymptoms[symptom] = disease;
-  //         }
-  //       }
-  //     });
-  //   }
-  // });
-  // availableSymptoms = Object.keys(availableSymptoms);
-  // availableSymptoms.forEach(function(symptom){
-  //   console.log('<option value="' + symptom + '">' + symptom + "</option>");
-  // })
+  $( ".info-body" ).hide();
 
   var interstitialWait = 1500;
   var interstitialMedium = 900;
@@ -92,10 +76,21 @@ $( document ).ready( function() {
 
 
     await sleep(interstitialLong);
-    $('.interstitial h1').fadeOut();
-    // await sleep(interstitialFast);
-    // // $('.symptoms_form').remove();
-    // // showDiagnosisInfo(disease);
+    // await sleep(1400);
+    $('.interstitial h1').fadeOut(400);
+    await sleep(400);
+    $('.main_body').hide();
+    await sleep(400);
+    $(".disease_name").text(disease);
+    $(".disease_description").text(disease_info['summary']);
+
+    $(".disease_symptoms").text(disease_info['all_symptoms'].join(", "));
+    $(".disease_matching_symptoms").text(disease_info['symptoms'].join(", "));
+    $(".read_more").click(function() {
+      window.location.href = disease_info['url'];
+    });
+
+    $( ".info-body" ).show();
   }
 
   $('.symptoms_button').click(function() {
@@ -188,31 +183,20 @@ $( document ).ready( function() {
 
 
 
+    // var availableSymptoms = {};
 
-
-
-
-
-  // function showDiagnosisInfo(disease) {
-  //   $('.col-md-10').append('<div class="col-md-1"></div><div class="col-md-10"><div class="col-md-3 diagnosis_header"><p class="name">'
-  //     + disease +
-  //     'DISEASE NAME</p></div><div class="col-md-7 diagnosis_info"><p class="info">DISEASE INFO</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
-  //     + "HELLOW"
-  //     + 'DESCRIPTION</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
-  //     + "ENTER SUMMARY HERE"
-  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">SYMPTOMS'
-  //     + '</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
-  //     + 'List of symptoms'
-  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
-  //     +
-  //         YOUR MATCHING SYMPTOMS
-  //       </p>
-  //     </div>
-  //     <div class="col-md-7 diagnosis_info">
-  //       <p class="info">Fever, Headache, Nausea</p>
-  //     </div>
-
-  //     <div class="col-md-10 diagnosis_info">
-  //       <p class="disclaimer">*DISCLAIMER: This is a joke app. You likely don\'t have this rare disease. If you are truly concerned, please see a doctor.</p>
-  //     </div>'
-  // }
+  // symptoms['symptoms'].forEach(function(symptom) {
+  //   for (var disease in diseases) {
+  //     diseases[disease]['symptoms'].forEach(function(disease_symptom){
+  //       if (symptom == disease_symptom) {
+  //         if (!(symptom in availableSymptoms)) {
+  //           availableSymptoms[symptom] = disease;
+  //         }
+  //       }
+  //     });
+  //   }
+  // });
+  // availableSymptoms = Object.keys(availableSymptoms);
+  // availableSymptoms.forEach(function(symptom){
+  //   console.log('<option value="' + symptom + '">' + symptom + "</option>");
+  // })
