@@ -23,10 +23,10 @@ $( document ).ready( function() {
   var interstitialLong = 4000;
   var interstitialFast = 550;
 
-  // var interstitialMedium = 1;
-  // var interstitialLong = 1;
-  // var interstitialFast = 1;
-  // var interstitialWait = 1;
+  var interstitialMedium = 1;
+  var interstitialLong = 1;
+  var interstitialFast = 1;
+  var interstitialWait = 1;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -76,12 +76,21 @@ $( document ).ready( function() {
     await sleep(interstitialFast);
     $('.interstitial h1').text("HAVE");
     await sleep(interstitialFast);
-    // $('.interstitial h1').css("font-size", "450%");
+    $('.interstitial h1').css("font-size", "2.5em");
 
-    // $('.interstitial h1').css("font-size", "900%");
-    // $('.interstitial h1').css("font-weight", "800");
-    // $('.interstitial h1').css("color", "rgb(187, 21, 21)");
-    // $('.interstitial h1').text(disease.toUpperCase());
+    var long_word = false;
+    disease.split(" ").forEach(function(word) {
+      if (word.length > 22) {
+        $('.interstitial h1').css("hyphens", "auto");
+      } else {
+        $('.interstitial h1').css("hyphens", "manual");
+      }
+    });
+    $('.interstitial h1').css("font-weight", "800");
+    $('.interstitial h1').css("color", "rgb(187, 21, 21)");
+    $('.interstitial h1').text(disease.toUpperCase());
+
+
     // await sleep(interstitialLong);
     // $('.interstitial h1').fadeOut();
     // await sleep(interstitialFast);
@@ -136,7 +145,10 @@ $( document ).ready( function() {
       // for (var disease in diseases_hash) {
       //   if (disease)
       // }
-      diagnose("Mitochondrial neurogastrointestinal encephalopathy syndrome");
+      if ()
+      diagnose(disease);
+      // diagnose("Mitochondrial neurogastrointestinal encephalopathy syndrome");
+      // diagnose("Naegeli–Franceschetti–Jadassohn syndrome");
     }
 
   });

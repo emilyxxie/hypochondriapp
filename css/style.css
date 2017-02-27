@@ -17,6 +17,8 @@
   font-size: 2.5vw;
   text-align: center;
   flex: 1;
+  /*word-wrap: break-word;*/
+  /*hyphens: auto;*/
 }
 
 .symptoms_input {
