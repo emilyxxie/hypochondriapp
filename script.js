@@ -7,10 +7,6 @@ $( document ).ready( function() {
   var interstitialLong = 4000;
   var interstitialFast = 550;
 
-  var interstitialMedium = 1;
-  var interstitialLong = 1;
-  var interstitialFast = 1;
-  var interstitialWait = 1;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

@@ -17,6 +17,14 @@ a:hover {
   text-decoration: none;
 }
 
+.about_link {
+  color: white;
+}
+
+.about_link:hover {
+  color: #f7e200;
+}
+
 .info-body, .about {
   flex-direction: row;
   flex: 1;
