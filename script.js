@@ -48,7 +48,7 @@ $( document ).ready( function() {
     $('.interstitial h1').text("Sorry, no diseases match your symptoms.");
   }
 
-  async function diagnose(disease) {
+  async function diagnose(disease, disease_info) {
     await sleep(500);
     $('.interstitial h1').text("Analyzing your symptoms...");
     await sleep(interstitialWait);
@@ -91,8 +91,8 @@ $( document ).ready( function() {
     $('.interstitial h1').text(disease.toUpperCase());
 
 
-    // await sleep(interstitialLong);
-    // $('.interstitial h1').fadeOut();
+    await sleep(interstitialLong);
+    $('.interstitial h1').fadeOut();
     // await sleep(interstitialFast);
     // // $('.symptoms_form').remove();
     // // showDiagnosisInfo(disease);
@@ -124,7 +124,7 @@ $( document ).ready( function() {
               diseases_hash[disease]['symptoms'] = [user_symptom];
               diseases_hash[disease]['summary'] = diseases[disease]['summary'];
               diseases_hash[disease]['url'] = diseases[disease]['url'];
-              diseases_hash[disease]['all_symptoms'] = diseases[disease]['all_symptoms'];
+              diseases_hash[disease]['all_symptoms'] = diseases[disease]['symptoms'];
             }
           }
         });
@@ -133,20 +133,42 @@ $( document ).ready( function() {
 
     $('.tag_line').fadeOut(300);
     $('.symptoms_input').fadeOut(300);
-    // $('flexdatalist-multiple').remove();
-    // $('.symptoms_input_box').fadeOut(300);
-    // $('.symptoms_button').fadeOut(300);
-    // $('.flexlist_data_multiple').fadeOut(300);
-    // console.log(diseases_hash);
     if (Object.keys(diseases_hash).length == 0) {
       noDiseases();
     } else {
-      // var diagnosis;
-      // for (var disease in diseases_hash) {
-      //   if (disease)
+      // var symptoms_matched = 0;
+      // var consideration_pool = [];
+      // for (disease in diseases_hash) {
+      //   if diseases_hash[disease] > symptoms_matched
       // }
-      if ()
-      diagnose(disease);
+      // // var diagnosis;
+      // // for (var disease in diseases_hash) {
+      // //   if (disease)
+      // // }
+      // debugger;
+      // diagnose(disease);
+
+      // TODO: make algorithm weigh total number of symptoms too.
+      console.log(diseases_hash);
+      var diseases_by_symptoms = Object.keys(diseases_hash).sort(function(a,b){
+        return diseases_hash[b]['count'] - diseases_hash[a]['count'];
+      });
+
+      var diseases_by_name = Object.keys(diseases_hash).sort(function(a,b){
+        return b.length - a.length;
+      });
+
+      // get top three longest names
+      var selection = diseases_by_name.splice(0, 3);
+      var final_disease = selection[Math.floor(Math.random()*selection.length)];
+
+      diagnose(final_disease, diseases_hash[final_disease]);
+
+
+
+      // if none of the diseases are longer than a given number, then pick the most symptoms matched
+
+
       // diagnose("Mitochondrial neurogastrointestinal encephalopathy syndrome");
       // diagnose("Naegeli–Franceschetti–Jadassohn syndrome");
     }
