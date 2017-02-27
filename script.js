@@ -18,7 +18,7 @@ $( document ).ready( function() {
   //   console.log('<option value="' + symptom + '">' + symptom + "</option>");
   // })
 
-  // var interstitialInitial = 1500;
+  var interstitialWait = 1500;
   var interstitialMedium = 900;
   var interstitialLong = 4000;
   var interstitialFast = 550;
@@ -38,56 +38,55 @@ $( document ).ready( function() {
 
   async function noDiseases() {
     await sleep(500);
-    $('.tag_line').text("Analyzing your symptoms...");
-    $('.tag_line').fadeIn(100);
+    $('.interstitial h1').get.text("Analyzing your symptoms...");
+    $('.interstitial h1').fadeIn(100);
     await sleep(interstitialWait);
-    $('.tag_line').text("Checking our databases...");
+    $('.interstitial h1').text("Checking our databases...");
     await sleep(interstitialWait);
-    $('.tag_line').text("Searching for possible diagnoses...");
+    $('.interstitial h1').text("Searching for possible diagnoses...");
     await sleep(interstitialWait);
-    $('.tag_line').text("Sorry, no diseases match your symptoms.");
+    $('.interstitial h1').text("Sorry, no diseases match your symptoms.");
   }
 
   async function diagnose(disease) {
     await sleep(500);
-    $('.tag_line').text("Analyzing your symptoms...");
-    $('.tag_line').fadeIn(100);
+    $('.interstitial h1').text("Analyzing your symptoms...");
     await sleep(interstitialWait);
-    $('.tag_line').text("Checking our databases...");
+    $('.interstitial h1').text("Checking our databases...");
     await sleep(interstitialWait);
-    $('.tag_line').text("Searching for possible diagnoses...");
+    $('.interstitial h1').text("Searching for possible diagnoses...");
     await sleep(interstitialWait);
-    $('.tag_line').text("Hmmmm.");
+    $('.interstitial h1').text("Hmmmm.");
     await sleep(interstitialWait);
-    $('.tag_line').text("This isn't looking good.");
+    $('.interstitial h1').text("This isn't looking good.");
     await sleep(interstitialWait);
-    $('.tag_line').text("...");
+    $('.interstitial h1').text("...");
     await sleep(interstitialWait);
-    // TODO: vary the screen message.
-    $('.tag_line').css("font-size", "1800%");
-    $('.tag_line').text("OH");
+    // // TODO: vary the screen message.
+    $('.interstitial h1').css("font-size", "7em");
+    $('.interstitial h1').text("OH");
     await sleep(interstitialFast);
-    $('.tag_line').text("MY");
+    $('.interstitial h1').text("MY");
     await sleep(interstitialFast);
-    $('.tag_line').text("GOD.");
+    $('.interstitial h1').text("GOD.");
     await sleep(interstitialFast);
-    $('.tag_line').text("YOU");
+    $('.interstitial h1').text("YOU");
     await sleep(interstitialFast);
-    $('.tag_line').text("COULD");
+    $('.interstitial h1').text("COULD");
     await sleep(interstitialFast);
-    $('.tag_line').text("HAVE");
+    $('.interstitial h1').text("HAVE");
     await sleep(interstitialFast);
-    // $('.tag_line').css("font-size", "450%");
+    // $('.interstitial h1').css("font-size", "450%");
 
-    $('.tag_line').css("font-size", "900%");
-    $('.tag_line').css("font-weight", "800");
-    $('.tag_line').css("color", "rgb(187, 21, 21)");
-    $('.tag_line').text(disease.toUpperCase());
-    await sleep(interstitialLong);
-    $('.tag_line').fadeOut();
-    await sleep(interstitialFast);
-    // $('.symptoms_form').remove();
-    // showDiagnosisInfo(disease);
+    // $('.interstitial h1').css("font-size", "900%");
+    // $('.interstitial h1').css("font-weight", "800");
+    // $('.interstitial h1').css("color", "rgb(187, 21, 21)");
+    // $('.interstitial h1').text(disease.toUpperCase());
+    // await sleep(interstitialLong);
+    // $('.interstitial h1').fadeOut();
+    // await sleep(interstitialFast);
+    // // $('.symptoms_form').remove();
+    // // showDiagnosisInfo(disease);
   }
 
   $('.symptoms_button').click(function() {
@@ -124,12 +123,12 @@ $( document ).ready( function() {
     }
 
     $('.tag_line').fadeOut(300);
-    $('.symptoms_input_box').fadeOut(300);
-    $('.symptoms_button').fadeOut(300);
-
-
-    console.log(diseases_hash);
-    debugger;
+    $('.symptoms_input').fadeOut(300);
+    // $('flexdatalist-multiple').remove();
+    // $('.symptoms_input_box').fadeOut(300);
+    // $('.symptoms_button').fadeOut(300);
+    // $('.flexlist_data_multiple').fadeOut(300);
+    // console.log(diseases_hash);
     if (Object.keys(diseases_hash).length == 0) {
       noDiseases();
     } else {

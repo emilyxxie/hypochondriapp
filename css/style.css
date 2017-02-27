@@ -10,6 +10,15 @@
   margin: 15px;
 }
 
+.interstitial {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-weight: 700px;
+  font-size: 2.5vw;
+  text-align: center;
+  flex: 1;
+}
+
 .symptoms_input {
   display: flex;
   padding-bottom: 10%;
@@ -23,7 +32,7 @@
 
 
 ul.flexdatalist-multiple {
-  padding: 10px;
+  padding: 12px;
 }
 
 
