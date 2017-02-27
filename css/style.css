@@ -13,15 +13,36 @@
 .symptoms_input {
   display: flex;
   padding-bottom: 10%;
-  height: 60px;
+  min-height: 60px;
+}
+
+
+.flexdatalist-multiple li.value {
+  font-size: 20px;
+}
+
+
+ul.flexdatalist-multiple {
+  padding: 10px;
 }
 
 
 .symptoms_input_box {
-  flex: 7;
-  font-size: 18px;
+  flex: 10;
+  font-size: 20px;
+  border: 5px solid white;
+  focus:none;
+  /*justify-content: center;*/
+  /*vertic:center*/
+  margin: auto;
+}
+
+.flexdatalist {
+/*  flex: 7;
+  font-size: 20px;
   padding: 1%;
   border: 5px solid white;
+  focus:none;*/
 }
 
 .symptoms_button {
@@ -41,7 +62,14 @@
   border: 5px solid #00234b;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+}
 
+
+.flexdatalist {
+  width: 2px;
+}
 
 
 
@@ -56,6 +84,7 @@ body {
   background-image: linear-gradient( rgba(5, 81, 105, 0.3), rgba(5, 81, 105, 0.3) ), url('../assets/hospital_bed.jpg');
   /*background-image: url('../assets/hospital_bed.jpg');*/
   background-size: cover;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .header {
@@ -68,12 +97,7 @@ body {
   font-weight: 700;
   font-family: 'Yanone Kaffeesatz';
   font-size: 50px;
-  /*color: #00234b;*/
-  /*color: #fff04b;*/
   color: #f7e200;
-  /*color: white;*/
-  /*-webkit-text-stroke-width: 1px;*/
-  /*-webkit-text-stroke-color: black;*/
   text-shadow: 2px 2px #00234b;
 }
 

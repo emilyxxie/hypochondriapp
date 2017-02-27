@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
 
+
   <link href="css/flexboxgrid.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
-
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
-
-  <!-- JQuery. Needed for bootstrap (e.g. navbar dropdown) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
   <script src="diseases.js"></script>
+  <script src="symptoms.js"></script>
   <script src="script.js"></script>
-  <script src="js/textext.core.js"></script>
+
+  <script src="js/jquery.flexdatalist.min.js"></script>
+  <link href="css/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+<link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -28,23 +31,308 @@
   </div>
   <div class="main_body">
     <main class="main_content">
-
         <h1 class="tag_line">Feeling sick? Enter your symptoms.</h1>
         <div class="symptoms_input">
-          <input type="text" class="symptoms_input_box" placeholder="example: fever, headache, retrograde ejaculation">
+          <input type='text'
+                 class='flexdatalist symptoms_input_box'
+                 data-min-length='1'
+                 multiple='multiple'
+                 data-selection-required='1'
+                 list='symptoms_list'
+                 name='symptoms_flexlist'>
           <button type="button" class="symptoms_button">&nbsp;<i class="fa fa-search fa-2x" aria-hidden="true"></i>
                       &nbsp; Diagnose me!&nbsp;</button>
         </div>
-
-
-
-
     </main>
-    <div class="col_1"></div>
-    <div class="col_2"></div>
-
-
-
   </div>
   <footer></footer>
 </body>
+
+
+
+
+<datalist id="symptoms_list">
+<option value="rectal pain">rectal pain</option>
+<option value="sluggishness">sluggishness</option>
+<option value="irregular menses">irregular menses</option>
+<option value="swelling">swelling</option>
+<option value="weight loss">weight loss</option>
+<option value="irregular periods">irregular periods</option>
+<option value="hirsutism">hirsutism</option>
+<option value="painful skin">painful skin</option>
+<option value="aggression">aggression</option>
+<option value="runny nose">runny nose</option>
+<option value="fatty stools">fatty stools</option>
+<option value="wheezing">wheezing</option>
+<option value="red eyes">red eyes</option>
+<option value="tremors">tremors</option>
+<option value="unhappy">unhappy</option>
+<option value="muscle cramps">muscle cramps</option>
+<option value="snoring">snoring</option>
+<option value="hyperthermia">hyperthermia</option>
+<option value="difficulty gaining weight">difficulty gaining weight</option>
+<option value="loss of vision">loss of vision</option>
+<option value="bradykinesia">bradykinesia</option>
+<option value="loss of coordination">loss of coordination</option>
+<option value="tinnitus">tinnitus</option>
+<option value="hair loss">hair loss</option>
+<option value="hypotension">hypotension</option>
+<option value="hearing loss">hearing loss</option>
+<option value="arrhythmia">arrhythmia</option>
+<option value="memory loss">memory loss</option>
+<option value="odynophagia">odynophagia</option>
+<option value="chest pain">chest pain</option>
+<option value="amusia">amusia</option>
+<option value="myopathy">myopathy</option>
+<option value="convulsions">convulsions</option>
+<option value="nausea">nausea</option>
+<option value="ptosis">ptosis</option>
+<option value="chronic pain">chronic pain</option>
+<option value="dyspepsia">dyspepsia</option>
+<option value="skin rash">skin rash</option>
+<option value="neck stiffness">neck stiffness</option>
+<option value="red eye">red eye</option>
+<option value="acid reflux">acid reflux</option>
+<option value="obesity">obesity</option>
+<option value="thin hair">thin hair</option>
+<option value="cataplexy">cataplexy</option>
+<option value="tired">tired</option>
+<option value="abdominal pain">abdominal pain</option>
+<option value="change in behavior">change in behavior</option>
+<option value="dehydration">dehydration</option>
+<option value="muscle cramp">muscle cramp</option>
+<option value="high blood pressure">high blood pressure</option>
+<option value="vaginal bleeding">vaginal bleeding</option>
+<option value="akinesia">akinesia</option>
+<option value="sweats">sweats</option>
+<option value="twitch">twitch</option>
+<option value="sputum production">sputum production</option>
+<option value="hyperpigmentation">hyperpigmentation</option>
+<option value="belching">belching</option>
+<option value="urinary incontinence">urinary incontinence</option>
+<option value="itching">itching</option>
+<option value="exophthalmos">exophthalmos</option>
+<option value="learning difficulties">learning difficulties</option>
+<option value="jaundice">jaundice</option>
+<option value="muscle spasm">muscle spasm</option>
+<option value="acalculia">acalculia</option>
+<option value="confusion">confusion</option>
+<option value="vomiting">vomiting</option>
+<option value="cachexia">cachexia</option>
+<option value="head pain">head pain</option>
+<option value="tremor">tremor</option>
+<option value="numbness">numbness</option>
+<option value="pustule">pustule</option>
+<option value="twitching">twitching</option>
+<option value="yellow skin">yellow skin</option>
+<option value="itchiness">itchiness</option>
+<option value="leg pain">leg pain</option>
+<option value="sleep disorders">sleep disorders</option>
+<option value="dysphagia">dysphagia</option>
+<option value="facial flushing">facial flushing</option>
+<option value="poor absorption of nutrients">poor absorption of nutrients</option>
+<option value="liver failure">liver failure</option>
+<option value="seizure">seizure</option>
+<option value="paranoia">paranoia</option>
+<option value="phobia">phobia</option>
+<option value="stings">stings</option>
+<option value="rash">rash</option>
+<option value="ataxia">ataxia</option>
+<option value="trouble speaking">trouble speaking</option>
+<option value="puncture wound">puncture wound</option>
+<option value="sweating">sweating</option>
+<option value="oral lesions">oral lesions</option>
+<option value="blurry vision">blurry vision</option>
+<option value="hip pain">hip pain</option>
+<option value="heart murmur">heart murmur</option>
+<option value="hyperactivity">hyperactivity</option>
+<option value="dental problem">dental problem</option>
+<option value="impotence">impotence</option>
+<option value="muscle aches">muscle aches</option>
+<option value="loss of appetite">loss of appetite</option>
+<option value="delusion">delusion</option>
+<option value="abdominal swelling">abdominal swelling</option>
+<option value="hoarse voice">hoarse voice</option>
+<option value="noisy breathing">noisy breathing</option>
+<option value="gas">gas</option>
+<option value="poor growth">poor growth</option>
+<option value="dysarthria">dysarthria</option>
+<option value="hot skin">hot skin</option>
+<option value="speech problem">speech problem</option>
+<option value="tachypnea">tachypnea</option>
+<option value="dark urine">dark urine</option>
+<option value="vaginal discharge">vaginal discharge</option>
+<option value="yellowing of the skin">yellowing of the skin</option>
+<option value="anasarca">anasarca</option>
+<option value="scaly skin">scaly skin</option>
+<option value="knee pain">knee pain</option>
+<option value="mouth ulcers">mouth ulcers</option>
+<option value="ear swelling">ear swelling</option>
+<option value="joint pain">joint pain</option>
+<option value="groin pain">groin pain</option>
+<option value="choking">choking</option>
+<option value="eye swelling">eye swelling</option>
+<option value="drug abuse">drug abuse</option>
+<option value="visual disturbances">visual disturbances</option>
+<option value="nystagmus">nystagmus</option>
+<option value="substance abuse">substance abuse</option>
+<option value="aching">aching</option>
+<option value="dysuria">dysuria</option>
+<option value="elevated temperature">elevated temperature</option>
+<option value="itchy eyes">itchy eyes</option>
+<option value="joint stiffness">joint stiffness</option>
+<option value="rigors">rigors</option>
+<option value="abscess">abscess</option>
+<option value="malaise">malaise</option>
+<option value="overweight">overweight</option>
+<option value="laceration">laceration</option>
+<option value="skin infection">skin infection</option>
+<option value="fatigue">fatigue</option>
+<option value="skeletal malformations">skeletal malformations</option>
+<option value="skin ulcers">skin ulcers</option>
+<option value="apraxia">apraxia</option>
+<option value="akathisia">akathisia</option>
+<option value="chills">chills</option>
+<option value="bloating">bloating</option>
+<option value="shortness of breath">shortness of breath</option>
+<option value="general weakness">general weakness</option>
+<option value="bleeding tendency">bleeding tendency</option>
+<option value="visual problems">visual problems</option>
+<option value="mania">mania</option>
+<option value="dizziness">dizziness</option>
+<option value="melena">melena</option>
+<option value="bradycardia">bradycardia</option>
+<option value="flank pain">flank pain</option>
+<option value="dyspareunia">dyspareunia</option>
+<option value="edema">edema</option>
+<option value="shivering">shivering</option>
+<option value="low blood pressure">low blood pressure</option>
+<option value="retrograde ejaculation">retrograde ejaculation</option>
+<option value="swollen abdomen">swollen abdomen</option>
+<option value="dry skin">dry skin</option>
+<option value="cuts">cuts</option>
+<option value="excessive thirst">excessive thirst</option>
+<option value="bloody diarrhea">bloody diarrhea</option>
+<option value="bone deformity">bone deformity</option>
+<option value="claudication">claudication</option>
+<option value="somnolence">somnolence</option>
+<option value="syncope">syncope</option>
+<option value="myalgia">myalgia</option>
+<option value="irregular heartbeat">irregular heartbeat</option>
+<option value="psychiatric problem">psychiatric problem</option>
+<option value="loss of balance">loss of balance</option>
+<option value="sore throat">sore throat</option>
+<option value="low blood sugar">low blood sugar</option>
+<option value="gastrointestinal issues">gastrointestinal issues</option>
+<option value="tachycardia">tachycardia</option>
+<option value="sterility">sterility</option>
+<option value="abdominal distension">abdominal distension</option>
+<option value="intracranial pressure">intracranial pressure</option>
+<option value="sleep apnea">sleep apnea</option>
+<option value="apnea">apnea</option>
+<option value="insomnia">insomnia</option>
+<option value="steatorrhea">steatorrhea</option>
+<option value="abrasion">abrasion</option>
+<option value="aphasia">aphasia</option>
+<option value="alcohol abuse">alcohol abuse</option>
+<option value="polyuria">polyuria</option>
+<option value="paresthesia">paresthesia</option>
+<option value="double vision">double vision</option>
+<option value="loss of consciousness">loss of consciousness</option>
+<option value="loss of mobility">loss of mobility</option>
+<option value="loss of inhibition">loss of inhibition</option>
+<option value="diplopia">diplopia</option>
+<option value="trouble sleeping">trouble sleeping</option>
+<option value="pale stools">pale stools</option>
+<option value="protruding abdomen">protruding abdomen</option>
+<option value="hallucination">hallucination</option>
+<option value="hemoptysis">hemoptysis</option>
+<option value="impaired vision">impaired vision</option>
+<option value="slurred speech">slurred speech</option>
+<option value="nasal congestion">nasal congestion</option>
+<option value="shaking">shaking</option>
+<option value="depression">depression</option>
+<option value="incoordination">incoordination</option>
+<option value="swallowing problem">swallowing problem</option>
+<option value="constipation">constipation</option>
+<option value="unstable joints">unstable joints</option>
+<option value="excessive appetite">excessive appetite</option>
+<option value="fever">fever</option>
+<option value="drooping eyelid">drooping eyelid</option>
+<option value="irritation">irritation</option>
+<option value="deformity">deformity</option>
+<option value="agoraphobia">agoraphobia</option>
+<option value="panic attack">panic attack</option>
+<option value="irritability">irritability</option>
+<option value="incontinence">incontinence</option>
+<option value="vertigo">vertigo</option>
+<option value="weakness">weakness</option>
+<option value="frequent infection">frequent infection</option>
+<option value="epistaxis">epistaxis</option>
+<option value="nipple discharge">nipple discharge</option>
+<option value="blindness">blindness</option>
+<option value="frequent fevers">frequent fevers</option>
+<option value="trauma">trauma</option>
+<option value="inflammation">inflammation</option>
+<option value="claustrophobia">claustrophobia</option>
+<option value="dyspnea">dyspnea</option>
+<option value="breathlessness">breathlessness</option>
+<option value="nerve pain">nerve pain</option>
+<option value="pyrexia">pyrexia</option>
+<option value="stabbing pain">stabbing pain</option>
+<option value="high blood sugar">high blood sugar</option>
+<option value="cirrhosis">cirrhosis</option>
+<option value="poor appetite">poor appetite</option>
+<option value="asthenia">asthenia</option>
+<option value="paresthesias">paresthesias</option>
+<option value="abnormal heart sound">abnormal heart sound</option>
+<option value="cough">cough</option>
+<option value="weight gain">weight gain</option>
+<option value="overdose">overdose</option>
+<option value="blister">blister</option>
+<option value="hyperventilation">hyperventilation</option>
+<option value="lightheaded">lightheaded</option>
+<option value="aggressive behavior">aggressive behavior</option>
+<option value="alexia">alexia</option>
+<option value="thigh pain">thigh pain</option>
+<option value="paralysis">paralysis</option>
+<option value="hypoventilation">hypoventilation</option>
+<option value="muscle weakness">muscle weakness</option>
+<option value="mottled skin">mottled skin</option>
+<option value="drooling">drooling</option>
+<option value="hypothermia">hypothermia</option>
+<option value="skin lesion">skin lesion</option>
+<option value="deafness">deafness</option>
+<option value="insect bite">insect bite</option>
+<option value="spinning">spinning</option>
+<option value="brittle nails">brittle nails</option>
+<option value="lethargy">lethargy</option>
+<option value="bone fragility">bone fragility</option>
+<option value="loss of memory">loss of memory</option>
+<option value="urticaria">urticaria</option>
+<option value="blurred vision">blurred vision</option>
+<option value="decreased motility">decreased motility</option>
+<option value="tingling">tingling</option>
+<option value="swollen lymph nodes">swollen lymph nodes</option>
+<option value="dry mouth">dry mouth</option>
+<option value="lack of energy">lack of energy</option>
+<option value="sneezing">sneezing</option>
+<option value="difficulty breathing">difficulty breathing</option>
+<option value="bleeding">bleeding</option>
+<option value="palpitation">palpitation</option>
+<option value="skeletal malformation">skeletal malformation</option>
+<option value="tooth pain">tooth pain</option>
+<option value="boil">boil</option>
+<option value="headache">headache</option>
+<option value="alopecia">alopecia</option>
+<option value="spider bite">spider bite</option>
+<option value="breathing problems">breathing problems</option>
+<option value="behavioral disturbances">behavioral disturbances</option>
+<option value="anxiety">anxiety</option>
+<option value="infertility">infertility</option>
+<option value="depressed">depressed</option>
+<option value="lower abdominal pain">lower abdominal pain</option>
+<option value="scoliosis">scoliosis</option>
+<option value="head injury">head injury</option>
+<option value="sadness">sadness</option>
+</datalist>

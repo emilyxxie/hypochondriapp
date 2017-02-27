@@ -1,7 +1,24 @@
 $( document ).ready( function() {
 
+  // var availableSymptoms = {};
+
+  // symptoms['symptoms'].forEach(function(symptom) {
+  //   for (var disease in diseases) {
+  //     diseases[disease]['symptoms'].forEach(function(disease_symptom){
+  //       if (symptom == disease_symptom) {
+  //         if (!(symptom in availableSymptoms)) {
+  //           availableSymptoms[symptom] = disease;
+  //         }
+  //       }
+  //     });
+  //   }
+  // });
+  // availableSymptoms = Object.keys(availableSymptoms);
+  // availableSymptoms.forEach(function(symptom){
+  //   console.log('<option value="' + symptom + '">' + symptom + "</option>");
+  // })
+
   // var interstitialInitial = 1500;
-  var interstitialWait = 1;
   var interstitialMedium = 900;
   var interstitialLong = 4000;
   var interstitialFast = 550;
@@ -9,6 +26,7 @@ $( document ).ready( function() {
   // var interstitialMedium = 1;
   // var interstitialLong = 1;
   // var interstitialFast = 1;
+  // var interstitialWait = 1;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -16,8 +34,6 @@ $( document ).ready( function() {
 
   async function makeSleep() {
     await sleep(2000);
-    console.log("Sleep");
-
   }
 
   async function noDiseases() {
@@ -74,41 +90,14 @@ $( document ).ready( function() {
     // showDiagnosisInfo(disease);
   }
 
-  // function showDiagnosisInfo(disease) {
-  //   $('.col-md-10').append('<div class="col-md-1"></div><div class="col-md-10"><div class="col-md-3 diagnosis_header"><p class="name">'
-  //     + disease +
-  //     'DISEASE NAME</p></div><div class="col-md-7 diagnosis_info"><p class="info">DISEASE INFO</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
-  //     + "HELLOW"
-  //     + 'DESCRIPTION</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
-  //     + "ENTER SUMMARY HERE"
-  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">SYMPTOMS'
-  //     + '</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
-  //     + 'List of symptoms'
-  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
-  //     +
-  //         YOUR MATCHING SYMPTOMS
-  //       </p>
-  //     </div>
-  //     <div class="col-md-7 diagnosis_info">
-  //       <p class="info">Fever, Headache, Nausea</p>
-  //     </div>
-
-  //     <div class="col-md-10 diagnosis_info">
-  //       <p class="disclaimer">*DISCLAIMER: This is a joke app. You likely don\'t have this rare disease. If you are truly concerned, please see a doctor.</p>
-  //     </div>'
-  // }
-
-
   $('.symptoms_button').click(function() {
     var symptoms_input = $("input").val();
     if (symptoms_input == "") {
       return;
     }
-    // var symptoms_input = $()
     var symptoms_array = symptoms_input.split(",");
     for (var i = 0; i < symptoms_array.length; i++) {
       symptoms_array[i] = symptoms_array[i].trim().toLowerCase();
-      // TODO: get rid of last comma, and empty string
     }
 
     // TODO: if the disease summary has the words "fatal" in it, add more points to "count"
@@ -138,6 +127,9 @@ $( document ).ready( function() {
     $('.symptoms_input_box').fadeOut(300);
     $('.symptoms_button').fadeOut(300);
 
+
+    console.log(diseases_hash);
+    debugger;
     if (Object.keys(diseases_hash).length == 0) {
       noDiseases();
     } else {
@@ -148,19 +140,46 @@ $( document ).ready( function() {
       diagnose("Mitochondrial neurogastrointestinal encephalopathy syndrome");
     }
 
-
-
-
-
   });
 
-  $('.symptoms_input_box').click(function() {
-    console.log("HELLO!!!!");
-    $(this).textext({
-      enabled: true
-    });
+
+  $('.flexdatalist').flexdatalist({
+       selectionRequired: 1,
+       minLength: 1,
+       data: ['data', 'dime']
   });
 
 
 
 });
+
+
+
+
+
+
+
+
+  // function showDiagnosisInfo(disease) {
+  //   $('.col-md-10').append('<div class="col-md-1"></div><div class="col-md-10"><div class="col-md-3 diagnosis_header"><p class="name">'
+  //     + disease +
+  //     'DISEASE NAME</p></div><div class="col-md-7 diagnosis_info"><p class="info">DISEASE INFO</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
+  //     + "HELLOW"
+  //     + 'DESCRIPTION</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
+  //     + "ENTER SUMMARY HERE"
+  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">SYMPTOMS'
+  //     + '</p></div><div class="col-md-7 diagnosis_info"><p class="info">'
+  //     + 'List of symptoms'
+  //     + '</p></div><div class="col-md-3 diagnosis_header"><p class="name">'
+  //     +
+  //         YOUR MATCHING SYMPTOMS
+  //       </p>
+  //     </div>
+  //     <div class="col-md-7 diagnosis_info">
+  //       <p class="info">Fever, Headache, Nausea</p>
+  //     </div>
+
+  //     <div class="col-md-10 diagnosis_info">
+  //       <p class="disclaimer">*DISCLAIMER: This is a joke app. You likely don\'t have this rare disease. If you are truly concerned, please see a doctor.</p>
+  //     </div>'
+  // }
