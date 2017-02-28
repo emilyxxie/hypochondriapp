@@ -37,7 +37,7 @@ a:hover {
   flex: 0 0 12em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .col1, .col2 {
     /* 12em is the width of the columns */
     flex: 0 0 2em;
