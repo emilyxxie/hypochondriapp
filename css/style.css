@@ -96,8 +96,6 @@ p {
   font-size: 2.5vw;
   text-align: center;
   flex: 1;
-  /*word-wrap: break-word;*/
-  /*hyphens: auto;*/
 }
 
 .symptoms_input {
@@ -228,10 +226,11 @@ body {
   padding-right: 7%;
 }
 
-
-@media (max-width: 320px) {
+@media (max-width: 675px) {
   .col_1, .col_2 {
     /* 12em is the width of the columns */
     flex: 0 0 2em; /* adjust this for mobile and stuff */
   }
+
+
 }

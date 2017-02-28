@@ -189,7 +189,7 @@ $( document ).ready( function() {
       });
 
       // get top three longest names
-      var selection = diseases_by_name.splice(0, 3);
+      var selection = diseases_by_name.splice(0, 5);
       var final_disease = selection[Math.floor(Math.random()*selection.length)];
 
       diagnose(final_disease, diseases_hash[final_disease]);
