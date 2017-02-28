@@ -2,74 +2,185 @@ $( document ).ready( function() {
 
   $( ".info-body" ).hide();
 
-  var interstitialWait = 1800;
+  var interstitialWait = 1700;
   var interstitialMedium = 900;
   var interstitialLong = 4000;
   var interstitialFast = 550;
 
   // var interstitialWait = 1;
-  var interstitialMedium = 1;
-  var interstitialLong = 1;
+  // var interstitialMedium = 1;
+  // var interstitialLong = 1;
   // var interstitialFast = 1;
 
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  // function sleep(ms) {
+  //   return new Promise(resolve => setTimeout(resolve, ms));
+  // }
+
+
+  function delay(fn, t) {
+    // private instance variables
+    var queue = [], self, timer;
+
+    function schedule(fn, t) {
+        timer = setTimeout(function() {
+            timer = null;
+            fn();
+            if (queue.length) {
+                var item = queue.shift();
+                schedule(item.fn, item.t);
+            }
+        }, t);
+    }
+    self = {
+        delay: function(fn, t) {
+            // if already queuing things or running a timer,
+            //   then just add to the queue
+            if (queue.length || timer) {
+                queue.push({fn: fn, t: t});
+            } else {
+                // no queue or timer yet, so schedule the timer
+                schedule(fn, t);
+            }
+            return self;
+        },
+        cancel: function() {
+            clearTimeout(timer);
+            queue = [];
+        }
+    };
+    return self.delay(fn, t);
   }
 
-  async function makeSleep() {
-    await sleep(2000);
+
+
+
+  // async function makeSleep() {
+  //   await sleep(2000);
+  // }
+
+  // async function noDiseases() {
+  //   await sleep(500);
+  //   $('.interstitial h1').get.text("Analyzing your symptoms...");
+  //   $('.interstitial h1').fadeIn(100);
+  //   await sleep(interstitialWait);
+  //   $('.interstitial h1').text("Checking our databases...");
+  //   await sleep(interstitialWait);
+  //   $('.interstitial h1').text("Searching for possible diagnoses...");
+  //   await sleep(interstitialWait);
+  //   $('.interstitial h1').text("Sorry, no diseases match your symptoms.");
+  // }
+
+  // function analyze_symptoms(disease, disease_info) {
+  //   setTimeout(, interstitialWait);
+  // }
+
+  // function check_databases(disease, disease_info) {
+
+  // }
+
+  // function check_databases(disease, disease_info) {
+
+  // }
+
+  // function check_databases(disease, disease_info) {
+
+  // }
+
+
+  // function check_databases(disease, disease_info) {
+
+  // }
+
+
+  // function check_databases(disease, disease_info) {
+
+  // }
+
+  // function set_text(text, disease, disease_info) {
+  //   var next = text.shift();
+  //   $('.interstitial h1').text(next[0]);
+  //   console.log(next);
+  //   if (text.length > 0) {
+  //     console.log("HERE");
+  //     setTimeout(set_text(text, disease, disease_info), next[1]);
+  //   }
+  // }
+
+  function analyze_symptoms() {
+    $('.interstitial h1').text("Analyzing your symptoms...");
   }
 
-  async function noDiseases() {
-    await sleep(500);
-    $('.interstitial h1').get.text("Analyzing your symptoms...");
-    $('.interstitial h1').fadeIn(100);
-    await sleep(interstitialWait);
+  function check_databases() {
     $('.interstitial h1').text("Checking our databases...");
-    await sleep(interstitialWait);
-    $('.interstitial h1').text("Searching for possible diagnoses...");
-    await sleep(interstitialWait);
-    $('.interstitial h1').text("Sorry, no diseases match your symptoms.");
   }
 
-  function diagnose(disease, disease_info) {
-    /* This needs refactor :-D */
-    setTimeout(function() {
-      $('.interstitial h1').text("Analyzing your symptoms...");
-      setTimeout(function() {
-        $('.interstitial h1').text("Checking our databases...");
-        setTimeout(function() {
-          $('.interstitial h1').text("Searching for possible diagnoses...");
-          setTimeout(function() {
-            $('.interstitial h1').text("Hmmm.");
-            setTimeout(function() {
-              $('.interstitial h1').text("This isn't looking good.");
-              setTimeout(function() {
-                $('.interstitial h1').text("...");
-                setTimeout(function() {
-                  $('.interstitial h1').css("font-size", "7em");
-                  $('.interstitial h1').text("OH");
-                  setTimeout(function() {
-                    $('.interstitial h1').text("MY");
-                    setTimeout(function() {
-                      $('.interstitial h1').text("GOD.");
-                      setTimeout(function() {
-                        $('.interstitial h1').text("YOU");
-                        setTimeout(function() {
-                          $('.interstitial h1').text("COULD");
+  function search_diagnoses() {
+    $('.interstitial h1').text("Searching for possible diagnoses...");
+  }
 
-                        }, interstitialFast);
-                      }, interstitialFast);
-                    }, interstitialFast);
-                  }, interstitialFast);
-                }, interstitialWait);
-              }, interstitialWait);
-            }, interstitialWait);
-          }, interstitialWait);
-        }, interstitialWait);
-      }, interstitialWait);
-    }, 500);
+  function hmmm() {
+    $('.interstitial h1').text("Hmmm.");
+  }
+
+  function looks_bad() {
+    $('.interstitial h1').text("This isn't looking good.");
+  }
+
+  function diagnose(text, disease, disease_info) {
+    // var text = [
+    //   ["Analyzing your symptoms", interstitialWait],
+    //   ["Checking our databases...", interstitialWait],
+    //   ["Searching for possible diagnoses...", interstitialWait]
+    // ];
+    // // setTimeout(analyze_symptoms(disease, disease_info), interstitialWait);
+    // set_text(text, disease, disease_info);
+    delay(analyze_symptoms, 500)
+    .delay(check_databases, interstitialWait)
+    .delay(search_diagnoses, interstitialWait)
+    .delay(hmmm, interstitialWait)
+    .delay(looks_bad, interstitialWait);
+
+
+
+    /* This needs refactor :-D */
+    // setTimeout(function() {
+    //   $('.interstitial h1').text("Analyzing your symptoms...");
+    //   setTimeout(function() {
+    //     $('.interstitial h1').text("Checking our databases...");
+    //     setTimeout(function() {
+    //       $('.interstitial h1').text("Searching for possible diagnoses...");
+    //       setTimeout(function() {
+    //         $('.interstitial h1').text("Hmmm.");
+    //         setTimeout(function() {
+    //           $('.interstitial h1').text("This isn't looking good.");
+    //           setTimeout(function() {
+    //             $('.interstitial h1').text("...");
+    //             setTimeout(function() {
+    //               $('.interstitial h1').css("font-size", "7em");
+    //               $('.interstitial h1').text("OH");
+    //               setTimeout(function() {
+    //                 $('.interstitial h1').text("MY");
+    //                 setTimeout(function() {
+    //                   $('.interstitial h1').text("GOD.");
+    //                   setTimeout(function() {
+    //                     $('.interstitial h1').text("YOU");
+    //                     setTimeout(function() {
+    //                       $('.interstitial h1').text("COULD");
+    //                       setTimeout(function() {
+    //                         $('.interstitial h1').text("COULD");
+
+    //                     }, interstitialFast);
+    //                   }, interstitialFast);
+    //                 }, interstitialFast);
+    //               }, interstitialFast);
+    //             }, interstitialWait);
+    //           }, interstitialWait);
+    //         }, interstitialWait);
+    //       }, interstitialWait);
+    //     }, interstitialWait);
+    //   }, interstitialWait);
+    // }, 500);
 
 
 
