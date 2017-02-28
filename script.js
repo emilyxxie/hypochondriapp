@@ -18,29 +18,29 @@ $( document ).ready( function() {
   // }
 
 
-  function delay(fn, t) {
+  function delay(fn, t, x) {
     // private instance variables
     var queue = [], self, timer;
 
-    function schedule(fn, t) {
+    function schedule(fn, t, x) {
         timer = setTimeout(function() {
             timer = null;
-            fn();
+            fn(x);
             if (queue.length) {
                 var item = queue.shift();
-                schedule(item.fn, item.t);
+                schedule(item.fn, item.t, item.x);
             }
         }, t);
     }
     self = {
-        delay: function(fn, t) {
+        delay: function(fn, t, x) {
             // if already queuing things or running a timer,
             //   then just add to the queue
             if (queue.length || timer) {
-                queue.push({fn: fn, t: t});
+                queue.push({fn: fn, t: t, x: x});
             } else {
                 // no queue or timer yet, so schedule the timer
-                schedule(fn, t);
+                schedule(fn, t, x);
             }
             return self;
         },
@@ -49,7 +49,7 @@ $( document ).ready( function() {
             queue = [];
         }
     };
-    return self.delay(fn, t);
+    return self.delay(fn, t, x);
   }
 
 
@@ -71,190 +71,72 @@ $( document ).ready( function() {
   //   $('.interstitial h1').text("Sorry, no diseases match your symptoms.");
   // }
 
-  // function analyze_symptoms(disease, disease_info) {
-  //   setTimeout(, interstitialWait);
-  // }
-
-  // function check_databases(disease, disease_info) {
-
-  // }
-
-  // function check_databases(disease, disease_info) {
-
-  // }
-
-  // function check_databases(disease, disease_info) {
-
-  // }
-
-
-  // function check_databases(disease, disease_info) {
-
-  // }
-
-
-  // function check_databases(disease, disease_info) {
-
-  // }
-
-  // function set_text(text, disease, disease_info) {
-  //   var next = text.shift();
-  //   $('.interstitial h1').text(next[0]);
-  //   console.log(next);
-  //   if (text.length > 0) {
-  //     console.log("HERE");
-  //     setTimeout(set_text(text, disease, disease_info), next[1]);
-  //   }
-  // }
-
-  function analyze_symptoms() {
-    $('.interstitial h1').text("Analyzing your symptoms...");
+  function change_interstitial(words) {
+    $('.interstitial h1').text(words);
   }
 
-  function check_databases() {
-    $('.interstitial h1').text("Checking our databases...");
+  function switch_to_panic_mode(text) {
+    $('.interstitial h1').css("font-size", "7em");
+    $('.interstitial h1').text(text);
   }
 
-  function search_diagnoses() {
-    $('.interstitial h1').text("Searching for possible diagnoses...");
+  function display_disease(disease) {
+    $('.interstitial h1').css("font-size", "2.5em");
+
+    var long_word = false;
+    disease.split(" ").forEach(function(word) {
+      if (word.length > 22) {
+        $('.interstitial h1').css("hyphens", "auto");
+      } else {
+        $('.interstitial h1').css("hyphens", "manual");
+      }
+    });
+    $('.interstitial h1').css("font-weight", "800");
+    $('.interstitial h1').css("color", "rgb(187, 21, 21)");
+    $('.interstitial h1').text(disease.toUpperCase());
   }
 
-  function hmmm() {
-    $('.interstitial h1').text("Hmmm.");
+  function fade_out_interstitial() {
+    $('.interstitial h1').fadeOut(400);
   }
 
-  function looks_bad() {
-    $('.interstitial h1').text("This isn't looking good.");
+  function display_disease_info(disease_array) {
+    var disease_name = disease_array[0];
+    var disease_info = disease_array[1];
+    $(".disease_name").text(disease_name);
+    $(".disease_description").text(disease_info['summary']);
+
+    $(".disease_symptoms").text(disease_info['all_symptoms'].join(", "));
+    $(".disease_matching_symptoms").text(disease_info['symptoms'].join(", "));
+    $(".read_more").click(function() {
+      window.location.href = disease_info['url'];
+    });
+
+    $(".info-body").show();
   }
 
-  function diagnose(text, disease, disease_info) {
-    // var text = [
-    //   ["Analyzing your symptoms", interstitialWait],
-    //   ["Checking our databases...", interstitialWait],
-    //   ["Searching for possible diagnoses...", interstitialWait]
-    // ];
-    // // setTimeout(analyze_symptoms(disease, disease_info), interstitialWait);
-    // set_text(text, disease, disease_info);
-    delay(analyze_symptoms, 500)
-    .delay(check_databases, interstitialWait)
-    .delay(search_diagnoses, interstitialWait)
-    .delay(hmmm, interstitialWait)
-    .delay(looks_bad, interstitialWait);
+  function hide_main_body () {
+    $('.main_body').hide();
+  }
 
-
-
-    /* This needs refactor :-D */
-    // setTimeout(function() {
-    //   $('.interstitial h1').text("Analyzing your symptoms...");
-    //   setTimeout(function() {
-    //     $('.interstitial h1').text("Checking our databases...");
-    //     setTimeout(function() {
-    //       $('.interstitial h1').text("Searching for possible diagnoses...");
-    //       setTimeout(function() {
-    //         $('.interstitial h1').text("Hmmm.");
-    //         setTimeout(function() {
-    //           $('.interstitial h1').text("This isn't looking good.");
-    //           setTimeout(function() {
-    //             $('.interstitial h1').text("...");
-    //             setTimeout(function() {
-    //               $('.interstitial h1').css("font-size", "7em");
-    //               $('.interstitial h1').text("OH");
-    //               setTimeout(function() {
-    //                 $('.interstitial h1').text("MY");
-    //                 setTimeout(function() {
-    //                   $('.interstitial h1').text("GOD.");
-    //                   setTimeout(function() {
-    //                     $('.interstitial h1').text("YOU");
-    //                     setTimeout(function() {
-    //                       $('.interstitial h1').text("COULD");
-    //                       setTimeout(function() {
-    //                         $('.interstitial h1').text("COULD");
-
-    //                     }, interstitialFast);
-    //                   }, interstitialFast);
-    //                 }, interstitialFast);
-    //               }, interstitialFast);
-    //             }, interstitialWait);
-    //           }, interstitialWait);
-    //         }, interstitialWait);
-    //       }, interstitialWait);
-    //     }, interstitialWait);
-    //   }, interstitialWait);
-    // }, 500);
-
-
-
-    // $('.interstitial h1').text("Analyzing your symptoms").afterTime(interstitialWait, function() {
-    //   $(this).text("Checking our databases...");
-    //   $(this).afterTime(interstitialWait, function() {
-    //     $(this).text("Searching for possible diagnoses...");
-    //     $(this).afterTime(interstitialWait, function() {
-    //       $(this).text("Hmmm.");
-    //     });
-    //   });
-    // });
-
-
-
-
-    // await sleep(500);
-    // $('.interstitial h1').text("Analyzing your symptoms...");
-    // await sleep(interstitialWait);
-    // $('.interstitial h1').text("Checking our databases...");
-    // await sleep(interstitialWait);
-    // $('.interstitial h1').text("Searching for possible diagnoses...");
-    // await sleep(interstitialWait);
-    // $('.interstitial h1').text("Hmmmm.");
-    // await sleep(interstitialWait);
-    // $('.interstitial h1').text("This isn't looking good.");
-    // await sleep(interstitialWait);
-    // $('.interstitial h1').text("...");
-    // await sleep(interstitialWait);
-    // // // TODO: vary the screen message.
-    // $('.interstitial h1').css("font-size", "7em");
-    // $('.interstitial h1').text("OH");
-    // await sleep(interstitialFast);
-    // $('.interstitial h1').text("MY");
-    // await sleep(interstitialFast);
-    // $('.interstitial h1').text("GOD.");
-    // await sleep(interstitialFast);
-    // $('.interstitial h1').text("YOU");
-    // await sleep(interstitialFast);
-    // $('.interstitial h1').text("COULD");
-    // await sleep(interstitialFast);
-    // $('.interstitial h1').text("HAVE");
-    // await sleep(interstitialFast);
-    // $('.interstitial h1').css("font-size", "2.5em");
-
-    // var long_word = false;
-    // disease.split(" ").forEach(function(word) {
-    //   if (word.length > 22) {
-    //     $('.interstitial h1').css("hyphens", "auto");
-    //   } else {
-    //     $('.interstitial h1').css("hyphens", "manual");
-    //   }
-    // });
-    // $('.interstitial h1').css("font-weight", "800");
-    // $('.interstitial h1').css("color", "rgb(187, 21, 21)");
-    // $('.interstitial h1').text(disease.toUpperCase());
-
-
-    // await sleep(interstitialLong);
-    // // await sleep(1400);
-    // $('.interstitial h1').fadeOut(400);
-    // await sleep(400);
-    // $('.main_body').hide();
-    // await sleep(400);
-    // $(".disease_name").text(disease);
-    // $(".disease_description").text(disease_info['summary']);
-
-    // $(".disease_symptoms").text(disease_info['all_symptoms'].join(", "));
-    // $(".disease_matching_symptoms").text(disease_info['symptoms'].join(", "));
-    // $(".read_more").click(function() {
-    //   window.location.href = disease_info['url'];
-    // });
-
-    // $( ".info-body" ).show();
+  function diagnose(disease, disease_info) {
+    var disease_array = [disease, disease_info];
+    delay(change_interstitial, 500, "Analyzing your symptoms...")
+    .delay(change_interstitial, interstitialWait, "Checking our databases...")
+    .delay(change_interstitial, interstitialWait + 200, "Searching for possible diagnoses...")
+    .delay(change_interstitial, interstitialWait, "Hmmm.")
+    .delay(change_interstitial, interstitialWait, "This isn't looking good.")
+    .delay(change_interstitial, interstitialWait, "...")
+    .delay(switch_to_panic_mode, interstitialWait, "OH")
+    .delay(change_interstitial, interstitialFast, "MY")
+    .delay(change_interstitial, interstitialFast, "GOD.")
+    .delay(change_interstitial, interstitialFast, "YOU")
+    .delay(change_interstitial, interstitialFast, "COULD")
+    .delay(change_interstitial, interstitialFast, "HAVE")
+    .delay(display_disease, interstitialFast, disease)
+    .delay(fade_out_interstitial, interstitialLong)
+    .delay(hide_main_body, 400)
+    .delay(display_disease_info, 400, disease_array); // FIRST NUMBER IS HOW LONG BEFORE YOUR ITEM SHOULD SHOW UP
   }
 
   $('.symptoms_button').click(function() {
