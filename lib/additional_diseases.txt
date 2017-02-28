@@ -11,14 +11,11 @@ Paragonimiasis
 Opisthorchiasis
 Echinococcosis
 Onchocerciasis
-Chagas_disease => American trypanosomiasis
 Schistosoma_bovis
 Spondweni_fever
 Lobomycosis
 Chikungunya
 Tropical_eosinophilia
-Creutzfeldt-Jakob-disease
-Fatal_familial_insomnia
 Cryptococcosis
 Granulomatous_amoebic_encephalitis
 Aspergillosis

@@ -1,22 +1,30 @@
 $( document ).ready( function() {
 
+  // var availableSymptoms = {};
+
+  // symptoms['symptoms'].forEach(function(symptom) {
+  //   for (var disease in diseases) {
+  //     diseases[disease]['symptoms'].forEach(function(disease_symptom){
+  //       if (symptom == disease_symptom) {
+  //         if (!(symptom in availableSymptoms)) {
+  //           availableSymptoms[symptom] = disease;
+  //         }
+  //       }
+  //     });
+  //   }
+  // });
+  // availableSymptoms = Object.keys(availableSymptoms);
+  // availableSymptoms.forEach(function(symptom){
+  //   console.log('<option value="' + symptom + '">' + symptom + "</option>");
+  // })
+
+
   $( ".info-body" ).hide();
 
   var interstitialWait = 1700;
   var interstitialMedium = 900;
   var interstitialLong = 4000;
   var interstitialFast = 550;
-
-  // var interstitialWait = 1;
-  // var interstitialMedium = 1;
-  // var interstitialLong = 1;
-  // var interstitialFast = 1;
-
-
-  // function sleep(ms) {
-  //   return new Promise(resolve => setTimeout(resolve, ms));
-  // }
-
 
   function delay(fn, t, x) {
     // private instance variables
@@ -51,25 +59,6 @@ $( document ).ready( function() {
     };
     return self.delay(fn, t, x);
   }
-
-
-
-
-  // async function makeSleep() {
-  //   await sleep(2000);
-  // }
-
-  // async function noDiseases() {
-  //   await sleep(500);
-  //   $('.interstitial h1').get.text("Analyzing your symptoms...");
-  //   $('.interstitial h1').fadeIn(100);
-  //   await sleep(interstitialWait);
-  //   $('.interstitial h1').text("Checking our databases...");
-  //   await sleep(interstitialWait);
-  //   $('.interstitial h1').text("Searching for possible diagnoses...");
-  //   await sleep(interstitialWait);
-  //   $('.interstitial h1').text("Sorry, no diseases match your symptoms.");
-  // }
 
   function change_interstitial(words) {
     $('.interstitial h1').text(words);
@@ -136,7 +125,7 @@ $( document ).ready( function() {
     .delay(display_disease, interstitialFast, disease)
     .delay(fade_out_interstitial, interstitialLong)
     .delay(hide_main_body, 400)
-    .delay(display_disease_info, 400, disease_array); // FIRST NUMBER IS HOW LONG BEFORE YOUR ITEM SHOULD SHOW UP
+    .delay(display_disease_info, 400, disease_array);
   }
 
   $('.symptoms_button').click(function() {
@@ -174,27 +163,22 @@ $( document ).ready( function() {
 
     $('.tag_line').fadeOut(300);
     $('.symptoms_input').fadeOut(300);
-    if (Object.keys(diseases_hash).length == 0) {
-      noDiseases();
-    } else {
 
-      // TODO: make algorithm weigh total number of symptoms too.
+    // TODO: make algorithm weigh total number of symptoms too.
 
-      var diseases_by_symptoms = Object.keys(diseases_hash).sort(function(a,b){
-        return diseases_hash[b]['count'] - diseases_hash[a]['count'];
-      });
+    var diseases_by_symptoms = Object.keys(diseases_hash).sort(function(a,b){
+      return diseases_hash[b]['count'] - diseases_hash[a]['count'];
+    });
 
-      var diseases_by_name = Object.keys(diseases_hash).sort(function(a,b){
-        return b.length - a.length;
-      });
+    var diseases_by_name = Object.keys(diseases_hash).sort(function(a,b){
+      return b.length - a.length;
+    });
 
-      // get top three longest names
-      var selection = diseases_by_name.splice(0, 5);
-      var final_disease = selection[Math.floor(Math.random()*selection.length)];
+    // if no names longer than 10 chars, get top five longest names
+    var selection = diseases_by_name.splice(0, 6);
+    var final_disease = selection[Math.floor(Math.random()*selection.length)];
 
-      diagnose(final_disease, diseases_hash[final_disease]);
-
-    }
+    diagnose(final_disease, diseases_hash[final_disease]);
 
   });
 

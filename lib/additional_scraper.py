@@ -13,20 +13,34 @@ diseases = set()
 
 ################################## MAIN LOOP ##################################
 
-
-for c in string.ascii_lowercase:
-  opener = urllib.request.build_opener()
-  opener.addheaders = [('User-agent', 'Mozilla/5.0')] #wikipedia needs this
-
-  resource = opener.open(page_name + c)
-
-  data = resource.read()
-  resource.close()
-  soup = BeautifulSoup(data, "html.parser")
-
-  diseases |= set(map(lambda t: t.get("href")[6:],
-               soup.find(id="mw-pages").find(class_="mw-category").find_all("a")))
-
+diseases = [
+"African_trypanosomiasis",
+"Lymphatic_filariasis",
+"Japanese_encephalitis",
+"Dracunculiasis",
+"Filariasis",
+"Soil-transmitted_helminthiasis",
+"Helminthiasis",
+"Schistosomiasis",
+"Leishmaniasis",
+"Paragonimiasis",
+"Opisthorchiasis",
+"Echinococcosis",
+"Onchocerciasis",
+"Schistosoma_bovis",
+"Spondweni_fever",
+"Lobomycosis",
+"Chikungunya",
+"Tropical_eosinophilia",
+"Cryptococcosis",
+"Granulomatous_amoebic_encephalitis",
+"Aspergillosis",
+"Tularemia",
+"Eastern_equine_encephalitis_virus",
+"Intestinal_capillariasis",
+"Venezuelan_equine_encephalitis_virus",
+"Middle_East_respiratory_syndrome"
+];
 
 diseases_batch = 0
 diseases_dict = {}
@@ -35,7 +49,7 @@ for disease in diseases:
   opener = urllib.request.build_opener()
   opener.addheaders = [('User-agent', 'Mozilla/5.0')] #wikipedia needs this
 
-  resource = opener.open("https://en.wikipedia.org/wiki/" + disease)
+  resource = opener.open("https://en.wikipedia.org/wiki/" + urllib.parse.quote(disease))
   data = resource.read()
   resource.close()
 
@@ -85,7 +99,7 @@ for disease in diseases:
   if diseases_batch == 300:
     joined_diseases = ", ".join(diseases_dict.keys())
     print("Writing to diseases.js: {}".format(joined_diseases))
-    with open("../diseases.js", "a") as diseases_file:
+    with open("../additional_diseases.js", "a") as diseases_file:
       json.dump(diseases_dict, diseases_file)
       diseases_file.write("\n")
 
@@ -94,5 +108,6 @@ for disease in diseases:
 
 joined_diseases = ", ".join(diseases_dict.keys())
 print("Final write to diseases.js: {}".format(joined_diseases))
-with open("../diseases.js", "a") as diseases_file:
+with open("../additional_diseases.js", "a") as diseases_file:
   json.dump(diseases_dict, diseases_file, indent=2)
+
