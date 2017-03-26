@@ -1,4 +1,4 @@
-additional_diseases.js{
+{
   "Schistosoma bovis": {
     "url": "https://en.wikipedia.org/wiki/Schistosoma_bovis",
     "symptoms": [

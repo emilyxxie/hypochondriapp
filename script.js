@@ -1,30 +1,12 @@
 $( document ).ready( function() {
 
-  // var availableSymptoms = {};
-
-  // symptoms['symptoms'].forEach(function(symptom) {
-  //   for (var disease in diseases) {
-  //     diseases[disease]['symptoms'].forEach(function(disease_symptom){
-  //       if (symptom == disease_symptom) {
-  //         if (!(symptom in availableSymptoms)) {
-  //           availableSymptoms[symptom] = disease;
-  //         }
-  //       }
-  //     });
-  //   }
-  // });
-  // availableSymptoms = Object.keys(availableSymptoms);
-  // availableSymptoms.forEach(function(symptom){
-  //   console.log('<option value="' + symptom + '">' + symptom + "</option>");
-  // })
-
-
   $( ".info-body" ).hide();
 
   var interstitialWait = 1700;
   var interstitialMedium = 900;
-  var interstitialLong = 4000;
+  var interstitialLong = 3100;
   var interstitialFast = 550;
+
 
   function delay(fn, t, x) {
     // private instance variables
@@ -90,6 +72,31 @@ $( document ).ready( function() {
   }
 
   function display_disease_info(disease_array) {
+
+    var info_body = "<main class=\"info-content\">"
+      + "<div class=\"flex-grid disease_info\">"
+        + "<div class=\"info_header\">Disease</div>"
+        + "<div class=\"info_detail disease_name\"></div>"
+        + "<div class=\"info_header\">Description</div>"
+        + "<div class=\"info_detail disease_description\"></div>"
+        + "<div class=\"info_header\">Symptoms</div>"
+        + "<div class=\"info_detail disease_symptoms\"></div>"
+        + "<div class=\"info_header\">Your Matching Symptom(s)</div>"
+        + "<div class=\"info_detail disease_matching_symptoms\"></div>"
+        + "<button type=\"button\" class=\"symptoms_button read_more\">&nbsp;</i>"
+                      + "&nbsp; Read More >>&nbsp;</button>"
+        + "<button type=\"button\" class=\"symptoms_button try_again\" onclick=\"window.location.reload()\">&nbsp;</i>"
+      + "&nbsp; Misdiagnosed? Try again >></button>"
+        + "<div class=\"disclaimer\">* DISCLAIMER: THIS APP IS A SPOOF ON CYBERCHONDRIA. "
+        + "YOU ARE VERY, VERY UNLIKELY TO HAVE THIS RARE DISEASE. IF YOU ARE CONCERNED, PLEASE SEE YOUR DOCTOR."
+        + "</div>"
+      + "</div>"
+      + "</main>"
+      + "<div class=\"col1\"></div>"
+      + "<div class=\"col2\"></div>";
+
+    $(".info-body").append(info_body);
+
     var disease_name = disease_array[0];
     var disease_info = disease_array[1];
     $(".disease_name").text(disease_name);
@@ -193,20 +200,4 @@ $( document ).ready( function() {
 
 
 
-    // var availableSymptoms = {};
 
-  // symptoms['symptoms'].forEach(function(symptom) {
-  //   for (var disease in diseases) {
-  //     diseases[disease]['symptoms'].forEach(function(disease_symptom){
-  //       if (symptom == disease_symptom) {
-  //         if (!(symptom in availableSymptoms)) {
-  //           availableSymptoms[symptom] = disease;
-  //         }
-  //       }
-  //     });
-  //   }
-  // });
-  // availableSymptoms = Object.keys(availableSymptoms);
-  // availableSymptoms.forEach(function(symptom){
-  //   console.log('<option value="' + symptom + '">' + symptom + "</option>");
-  // })

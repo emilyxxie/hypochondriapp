@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.about {
+  flex: 1;
+}
+
 .col1 {
   order: -1;
 }
@@ -15,6 +19,12 @@ a {
 a:hover {
   color: white;
   text-decoration: none;
+}
+
+.main_about {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .about_link {
@@ -32,6 +42,16 @@ a:hover {
 .info-content {
   flex: 1;
 }
+
+.about_footnote {
+  opacity: 0.80;
+  font-size: 0.80em;
+}
+
+.footnote_link {
+  color: #fff9bc;
+}
+
 .col1, .col2 {
   /* 12em is the width of the columns */
   flex: 0 0 12em;
@@ -42,6 +62,38 @@ a:hover {
     /* 12em is the width of the columns */
     flex: 0 0 2em;
   }
+}
+
+.about_icons {
+  text-align: center;
+
+}
+
+.icons [class*="fa fa-"] {
+  display: inline-block;
+  width: 100%;
+  border-radius: 100px;
+  border: 2.5px solid;
+  color: rgb(50, 50, 50);
+  color: #f7e200;
+  line-height: 65px;
+  width: 65px;
+  opacity: 0.8;
+  text-align: center;
+  padding: 2px;
+  margin: 7px;
+}
+
+a:hover.fa,
+a:active.fa,
+a:focus.fa {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: color 0.5s;
+  -moz-transition:    color 0.5s;
+  -ms-transition:     color 0.5s;
+  -o-transition:      color 0.5s;
+  transition:         color 0.5s;
 }
 
 p {
@@ -141,6 +193,8 @@ ul.flexdatalist-multiple {
   background-color: #fff04b;
   color: #00234b;
   justify-content: center;
+  margin-right: 10px;
+  padding: 5px;
 }
 
 
@@ -164,13 +218,11 @@ input:focus, textarea:focus {
 
 
 
-
 /* STRUCTURE BELOW */
 
 body {
   /* 15, 81, 95 */
-  background-image: linear-gradient( rgba(5, 81, 105, 0.3), rgba(5, 81, 105, 0.3) ), url('../assets/hospital_bed.jpg');
-  /*background-image: url('../assets/hospital_bed.jpg');*/
+  background-image: linear-gradient( rgba(5, 81, 105, 0.3), rgba(5, 81, 105, 0.3) ), url('../images/hospital_bed.jpg');
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
 }
@@ -199,6 +251,10 @@ body {
 .main_body {
   display: flex;
   flex-direction: column;
+}
+
+.everything_about {
+  min-height: 100vh;
 }
 
 .col_1 {
