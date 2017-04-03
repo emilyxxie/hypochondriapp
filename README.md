@@ -10,4 +10,4 @@ Hypochondriapp is a spoof on the modern phenomenon of web-induced hypochondria. 
 
 Hypochondriapp was built using Python, Javascript, JQuery, and Flexbox. It scrapes Wikipedia's rare diseases section, and simply returns one of the diseases with the top 3 longest names that matches any one of your entered symptoms.
 
-This app is a remake of an [old project](https://github.com/hypochondriapp/hypochondriapp) I did back in 2013 with collaborators Greg Eng and David Bella.
+Shoutouts: This app is a remake of an [old project](https://github.com/hypochondriapp/hypochondriapp) I did back in 2013 with collaborators Greg Eng and David Bella.
