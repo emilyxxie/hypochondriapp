@@ -7,7 +7,6 @@ $( document ).ready( function() {
   var interstitialLong = 3100;
   var interstitialFast = 550;
 
-
   function delay(fn, t, x) {
     // private instance variables
     var queue = [], self, timer;
@@ -84,9 +83,11 @@ $( document ).ready( function() {
         + "<div class=\"info_header\">Your Matching Symptom(s)</div>"
         + "<div class=\"info_detail disease_matching_symptoms\"></div>"
         + "<button type=\"button\" class=\"symptoms_button read_more\">&nbsp;</i>"
-                      + "&nbsp; Read More >>&nbsp;</button>"
+                      + "&nbsp; Read More >&nbsp;</button>"
         + "<button type=\"button\" class=\"symptoms_button try_again\" onclick=\"window.location.reload()\">&nbsp;</i>"
-      + "&nbsp; Misdiagnosed? Try again >></button>"
+      + "&nbsp; Misdiagnosed? Try again ></button>"
+      + "<button type=\"button\" class=\"symptoms_button\" onclick=\"window.location.replace('http://hypochondriapp.io/about.html')\">&nbsp;</i>"
+      + "&nbsp; About Hypochondriapp ></button>"
         + "<div class=\"disclaimer\">* DISCLAIMER: THIS APP IS A SPOOF ON CYBERCHONDRIA. "
         + "YOU ARE VERY, VERY UNLIKELY TO HAVE THIS RARE DISEASE. IF YOU ARE CONCERNED, PLEASE SEE YOUR DOCTOR."
         + "</div>"
