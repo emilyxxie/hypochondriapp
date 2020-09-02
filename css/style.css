@@ -1,3 +1,12 @@
+/* Flexbox centering fix */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* General styling */
+
 .info-body, .about {
   display: flex;
   flex-direction: column;

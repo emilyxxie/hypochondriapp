@@ -14,8 +14,6 @@
   ga('send', 'pageview');
 
 </script>
-
-  <link href="css/flexboxgrid.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
@@ -48,37 +46,33 @@
 }
 </style>
 
-<body class="everything">
-  <div class="header">
-    <div class="logo"><a href="index.html">hypochondriapp</a></div>
-    <div class="navigation"><a href="about.html" class="about_link">About</a></div>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo"><a href="index.html">hypochondriapp</a></div>
+      <div class="navigation"><a href="about.html" class="about_link">About</a></div>
+    </div>
+    <div class="main_body">
+      <main class="main_content">
+          <h1 class="tag_line">Feeling sick? Enter your symptoms.</h1>
+          <div class="symptoms_input">
+            <input type='text'
+                   class='flexdatalist symptoms_input_box'
+                   data-min-length='1'
+                   multiple='multiple'
+                   data-selection-required='1'
+                   list='symptoms_list'
+                   name='symptoms_flexlist'>
+            <button type="button" class="symptoms_button">&nbsp;<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+                        &nbsp; Diagnose me!&nbsp;</button>
+          </div>
+          <div class="interstitial"><h1></h1></div>
+      </main>
+    </div>
+
+    <div class="info-body">
+    </div>
   </div>
-  <div class="main_body">
-    <main class="main_content">
-        <h1 class="tag_line">Feeling sick? Enter your symptoms.</h1>
-        <div class="symptoms_input">
-          <input type='text'
-                 class='flexdatalist symptoms_input_box'
-                 data-min-length='1'
-                 multiple='multiple'
-                 data-selection-required='1'
-                 list='symptoms_list'
-                 name='symptoms_flexlist'>
-          <button type="button" class="symptoms_button">&nbsp;<i class="fa fa-search fa-2x" aria-hidden="true"></i>
-                      &nbsp; Diagnose me!&nbsp;</button>
-        </div>
-        <div class="interstitial"><h1></h1></div>
-    </main>
-  </div>
-
-  <div class="info-body">
-  </div>
-
-
-
-
-
-  <footer></footer>
 </body>
 
 
